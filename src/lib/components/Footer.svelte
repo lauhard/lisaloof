@@ -56,10 +56,10 @@
                 <h5>Rechtliches</h5>
                 <ul>
                     <li>
-                        <a class="text" href="#">Impressum</a>
+                        <a class="text" href="/impressum">Impressum</a>
                     </li>
                     <li>
-                        <a class="text" href="#">Datenschutz</a>
+                        <a class="text" href="/datenschutz">Datenschutz</a>
                     </li>
                 </ul>
             </div>

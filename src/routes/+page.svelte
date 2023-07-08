@@ -2,6 +2,26 @@
     import LogoSvg from "$lib/components/svgs/LogoSvg.svelte";
     import RoundButton from "$lib/components/RoundButton.svelte";
     import ArrowDownSvg from "$lib/components/svgs/ArrowDownSvg.svelte";
+    import { onMount } from "svelte";
+    import { wait } from "$lib/utils";
+    import { SliceZone } from "@prismicio/svelte";
+    import Popup from '$lib/components/slices/Popup.svelte';
+
+    import type { PrismicDocument } from "@prismicio/client";
+    import type { PageServerData } from "./$types";
+
+
+    export let data: PageServerData;
+    export let document:PrismicDocument = data?.document as PrismicDocument;
+    const popup = document.data.body.filter((s: { slice_type: string; }) =>s.slice_type == "popup");
+
+    $:showPopup=false;
+
+    onMount(async () => {
+        let ok = await wait(5000);
+        showPopup = ok=="finished" ? true : false;
+    });
+
 </script>
 
 <svelte:head>
@@ -26,6 +46,10 @@
 </div>
 
 <div class="section">
+    {#if showPopup}
+        <!-- content here -->
+        <SliceZone slices={popup} components={{"popup":Popup}} />
+    {/if}
     <RoundButton
         classNames="hover scroll-down"
         title="scroll to the next headline"

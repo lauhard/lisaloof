@@ -3,15 +3,14 @@
     export let className = "";
 </script>
 
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<ul class="bar-wrapper {className}" on:mousedown={()=>{open=!open;}} class:open={open === true}>
+<div class="bar-wrapper {className}" aria-label="toggle-burger-menu" role="button" tabindex="0" aria-live="polite" on:mousedown={()=>{open=!open;}} class:open={open === true}>
     <li class="bar first"></li>
     <li class="bar second"></li>
     <li class="bar third"></li>
-</ul>
+</div>
 
 <style lang="scss">
-    ul, li {
+    .bar-wrapper, li {
         margin: 0;
         padding: 0;
     }
@@ -26,6 +25,8 @@
         position: relative;
         box-sizing: border-box;
         align-items: start;
+        background-color: transparent;
+        border-radius: 0px;
         &:hover{
             .bar{
                 border:1px solid var(--primary);

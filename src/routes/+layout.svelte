@@ -9,12 +9,19 @@
     import Navigation from "$lib/components/Navigation.svelte";
     import Logo from "$lib/components/Logo.svelte";
     import Footer from "$lib/components/Footer.svelte";
+   
+
+  
 
 
     inject({ mode: dev ? 'development' : 'production' });
 
 
+    
+
     export let data: LayoutData;
+
+
 
 
     const offset = 400;
@@ -51,6 +58,7 @@
         </div>
         <!-- content here -->
         <main>
+           
             <slot />
         </main>
        <Footer></Footer>
