@@ -1,0 +1,219 @@
+@import url(./lib/css/pico/pico.css);
+@font-face {
+  font-family: "Segoe UI" !important;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-body:
+      -apple-system,
+      "Open Sans",
+      "Segoe UI",
+      sans-serif;
+  --content-width: 1240px;
+  --background: #ffffff !important;
+  --text: #4A4A4A !important;
+  --primary: #77B6BA !important;
+  --attention:#378D93;
+  --primary-hover: #77b5bac8 !important;
+  --secondary: #c4b26a !important;
+  --secondary-hover: #cea917 !important;
+  --svg-icon-fill: #060000;
+  --svg-icon-stroke: #060000;
+  --font-family: "Segoe UI", sans-serif, -apple-system !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--main-background-color, #fff);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary, #c4b26a);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-hover, #ddc35a);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button,
+button:hover,
+input[type=text],
+input[type=button],
+a[type=button] {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+button,
+button:hover,
+input[type=button],
+a[type=button] {
+  border-radius: 0px;
+  border-style: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--secondary);
+  color: var(--text);
+}
+
+h1.decorator::before,
+h2.decorator::before,
+h3.decorator::before {
+  content: "";
+  border-bottom-width: 3px;
+  background-color: var(--secondary);
+  background-color: var(--primary);
+  position: absolute;
+  border-color: var(--secondary);
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+h1.decorator::before {
+  width: 5rem;
+  height: 5px;
+  border-radius: 3px;
+  margin-top: 2.9rem;
+}
+
+h2.decorator::before {
+  width: 4rem;
+  height: 4.5px;
+  border-radius: 4.5px;
+  margin-top: 2.3rem;
+}
+
+h3.decorator::before {
+  width: 3rem;
+  height: 3.5px;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+li, p {
+  font-weight: 100;
+}
+
+p, .text {
+  text-align: justify;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.hover {
+  animation: hover 1.5s linear infinite;
+}
+
+.svg-icons {
+  stroke: var(--svg-icon-stroke);
+  fill: var(--svg-icon-fill);
+}
+
+.cta {
+  background-color: var(--secondary);
+  font-family: var(--font-family, "Segoe UI");
+  box-sizing: border-box;
+  min-width: 250px;
+  width: auto;
+  height: auto;
+  min-height: 58px;
+  height: auto;
+  padding: 20px !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8rem;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--text);
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cta svg {
+  margin-top: -3px;
+  margin-right: 5px;
+}
+.cta:hover {
+  background-color: var(--secondary-hover);
+  color: #fff;
+}
+.cta:hover a {
+  color: var(--text);
+}
+
+html {
+  font-size: calc(15px + 0.390625vw);
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+  overflow-y: scroll;
+}
+html body {
+  font-family: var(--font-body) !important;
+  color: var(--text);
+  background-color: var(--background);
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes hover {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(5px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #546e7a;
+    --primary-hover: #607d8b;
+    --primary-focus: rgba(84, 110, 122, 0.25);
+    --primary-inverse: #FFF;
+  }
+}/*# sourceMappingURL=app.css.map */
