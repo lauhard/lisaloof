@@ -4,7 +4,7 @@
     import { onMount } from "svelte";
 
 	export let slice: Slice;
-
+	
 	// let text: prismic.RichTextField = slice.primary.text as prismic.RichTextField;
 	// let emoji: prismic.KeyTextField = slice.primary.emoji as prismic.KeyTextField;
 	let from = slice.items[0].from;
@@ -17,11 +17,9 @@
 	let url: any = image.url;
 	let dialog: HTMLDialogElement;
 
-
 	onMount(() => {
 		dialog.show();
 	});
-
 
 </script>
 
@@ -46,13 +44,13 @@
 		<!-- <img src="{url}" alt="" srcset=""> -->
 		<div class="information">
 			{#each popuptext as text}
-				<p>{text.text}</p>
+				<p class="text">{text.text}</p>
 			{/each}
 		</div>
 		<div class="dates">
 			<ul>
 				{#each dates as date}
-					<li>{date.text}</li>
+					<li class="text">{date.text}</li>
 				{/each}
 			</ul>
 		</div>

@@ -123,10 +123,12 @@ h3.decorator::before {
 
 a {
   text-decoration: none;
+  color: var(--text);
 }
 
 li, p {
   font-weight: 100;
+  color: var(--text);
 }
 
 p, .text {

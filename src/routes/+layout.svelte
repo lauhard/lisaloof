@@ -11,16 +11,14 @@
     import Footer from "$lib/components/Footer.svelte";
    
 
-  
 
 
     inject({ mode: dev ? 'development' : 'production' });
 
 
-    
+
 
     export let data: LayoutData;
-
 
 
 
@@ -58,7 +56,6 @@
         </div>
         <!-- content here -->
         <main>
-           
             <slot />
         </main>
        <Footer></Footer>
