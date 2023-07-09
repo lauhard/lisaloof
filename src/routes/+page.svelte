@@ -58,7 +58,7 @@
 <div class="section">
     {#if showPopup}
         <!-- content here -->
-        <!-- <SliceZone slices={popup} components={{"popup":Popup}} /> -->
+        <SliceZone slices={popup} components={{"popup":Popup}} />
     {/if}
     <RoundButton
         classNames="hover scroll-down"
