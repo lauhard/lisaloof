@@ -40,10 +40,13 @@
                         <a class="text" href="/">Startseite</a>
                     </li>
                     <li>
+                        <a class="text" href="/ueber-mich">Über mich</a>
+                    </li>
+                    <li>
                         <a class="text" href="/leistungen">Leistungen</a>
                     </li>
                     <li>
-                        <a class="text" href="/ueber-mich">Über mich</a>
+                        <a class="text" href="/onlinehypnose">Online-Hypnose</a>
                     </li>
                     <li>
                         <a class="text" href="/kontakt">Kontakt</a>
@@ -116,7 +119,6 @@
         h5 {
             color: #378d93;
             color: var(--secondary);
-            font-weight: 500;
             margin-bottom: 10px;
             margin-top: 10px;
             padding: 0px;

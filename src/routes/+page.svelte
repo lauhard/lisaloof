@@ -5,7 +5,7 @@
     import { onMount } from "svelte";
     import { wait } from "$lib/utils";
     import { SliceZone } from "@prismicio/svelte";
-    import Popup from '$lib/components/slices/Popup.svelte';
+    import Popup from "$lib/components/slices/Popup.svelte";
     import Headline from "$lib/components/Headline.svelte";
     import Information from "$lib/components/Information.svelte";
     import ProfileImage from "$lib/images/lisa-min.webp";
@@ -17,22 +17,22 @@
     import Praxis2 from "$lib/images/praxis2.webp";
     import Hypnose from "$lib/images/was-ist-hypnose.webp";
 
-
     import type { PrismicDocument } from "@prismicio/client";
     import type { PageServerData } from "./$types";
     import Faq from "$lib/components/FAQ.svelte";
 
     export let data: PageServerData;
-    export let document:PrismicDocument = data?.document as PrismicDocument;
-    const popup = document.data.body.filter((s: { slice_type: string; }) =>s.slice_type == "popup");
+    export let document: PrismicDocument = data?.document as PrismicDocument;
+    const popup = document.data.body.filter(
+        (s: { slice_type: string }) => s.slice_type == "popup"
+    );
 
-    $:showPopup=false;
+    $: showPopup = false;
 
     onMount(async () => {
         let ok = await wait(5000);
-        showPopup = ok=="finished" ? true : false;
+        showPopup = ok == "finished" ? true : false;
     });
-
 </script>
 
 <svelte:head>
@@ -58,7 +58,7 @@
 <div class="section">
     {#if showPopup}
         <!-- content here -->
-        <SliceZone slices={popup} components={{"popup":Popup}} />
+        <!-- <SliceZone slices={popup} components={{"popup":Popup}} /> -->
     {/if}
     <RoundButton
         classNames="hover scroll-down"
@@ -72,7 +72,7 @@
             <ArrowDownSvg width="20px" height="30px" --fill="#fff" />
         </a>
     </RoundButton>
-   <div class="grid">
+    <div class="grid">
         <div class="cell cell-headline">
             <div class="headline-wrapper">
                 <Headline classNames="heading" />
@@ -157,18 +157,28 @@
             <div class="subgrid-praxis praxis-wrapper">
                 <div class="subgrid-cell contact">
                     <p>
-                        Sie können Termine gerne telefonisch oder über E-Mail
-                        vereinbaren.
+                        Sie können Termine, oder Ihr kostenloses Erstgespräch
+                        gerne telefonisch oder über E-Mail vereinbaren.
                     </p>
 
                     <div class="contact-buttons">
                         <a class="cta" type="button" href="tel:+4367761750953">
-                            <PhoneSvg width="30px" height="22px" classNames="onHover" --fill="var(--white)" ></PhoneSvg>
+                            <PhoneSvg
+                                width="30px"
+                                height="22px"
+                                classNames="onHover"
+                                --fill="var(--white)"
+                            />
                             +43 67761750953
                         </a>
 
                         <a class="cta" type="button" href="/kontakt">
-                            <EmailSvg width="30px" height="22px" classNames="onHover" --fill="var(--white)" ></EmailSvg>
+                            <EmailSvg
+                                width="30px"
+                                height="22px"
+                                classNames="onHover"
+                                --fill="var(--white)"
+                            />
                             Kontakformular
                         </a>
                     </div>
@@ -180,69 +190,75 @@
                     <img src={Praxis2} alt="" srcset="" />
                 </div>
                 <div class="subgrid-cell map">
-                    <p>
-                        Meine Praxis befindet sich in der Waaggasse 1 im
-                        Zentrum von Klagenfurt.
-                    </p>
-                    <div class="contact-buttons">
-                        <a
-                        class="cta"
-                        href="https://goo.gl/maps/JhctkWRnJmyWfm3Y8"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <MapSvg width="35px" height="25px" classNames="onHover"  --fill="var(--white)"></MapSvg>Karte öffnen</a
-                    >
+                    <div class="address-wrapper">
+                        <p>
+                            Meine Praxis befindet sich im Zentrum von
+                            Klagenfurt.
+                        </p>
+
+                        <div class="contact-buttons">
+                            <a
+                                class="cta"
+                                href="https://goo.gl/maps/VhgjNbHZmWpUjEwR9"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <MapSvg
+                                    width="35px"
+                                    height="25px"
+                                    classNames="onHover"
+                                    --fill="var(--white)"
+                                />Karte öffnen</a
+                            >
+                        </div>
+                        <div class="address">
+                            <p>Waagplatz 1, 9020 Klagenfurt</p>
+                            <p>Österreich</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="cell cell-hypnose">
             <div class="hypnose-wrapper">
-                <h2 class="decorator">Was ist Hypnose</h2>
+                <h2 class="decorator">Was ist Hypnose?</h2>
                 <article class="hypnose">
                     <div class="hypnose__image">
                         <img src={Hypnose} alt="" srcset="" />
                     </div>
                     <div class="hypnose__text">
                         <p>
-                            Zur einfacheren Einordnung lässt sich das
-                            menschliche Bewusstsein grundsätzlich in zwei
-                            Bewusstseinsstadien unterteilen. Das Bewusstsein und
-                            das Unterbewusstsein. Das Bewusstsein ist
-                            beispielsweise für das rationale Lösen von Aufgaben
-                            zuständig oder das Treffen bewusster Entscheidungen.
-                            Dieser bewusste Anteil beträgt nur ca. 10 % unserer
-                            gesamt möglichen Leistungen. Das bedeutet im
-                            Umkehrschluss, wir Menschen besitzen viel mehr
-                            Potenzial, welches ungenutzt bleibt und sich im
-                            Untergrund auf unser Bewusstsein auswirkt, ohne,
-                            dass wir es bemerken.
+                            Das menschliche Bewusstsein lässt sich ganz einfach
+                            erklärt in zwei Bewusstseinsstadien unterteilen. Das
+                            Bewusstsein und das Unterbewusstsein. Das
+                            Bewusstsein ermöglicht uns das rationale Lösen von
+                            Aufgaben oder das Treffen Entscheidungen. Allerdings
+                            beträgt dieser bewusste Anteil nur ca. 10 % unserer
+                            gesamt möglichen Leistungen.
                         </p>
                         <br />
                         <p>
-                            In der Hypnose arbeiten wir mit dem
-                            Unterbewusstsein, während der kritische Faktor des
-                            Bewusstseins in den Hintergrund gerät. Dadurch
+                            Das bedeutet im Umkehrschluss, dass ein Großteil
+                            unseres Potenzials ungenutzt bleibt. Im Untergrund
+                            wirkt es sich oft unbemerkt auf unser Bewusstsein
+                            aus. In der Hypnose gerät der kritische Faktor des
+                            Bewusstseins in den Hintergrund, was ein Arbeiten
+                            mit dem Unterbewusstsein ermöglicht. Dadurch
                             gelangen wir an Inhalte, die uns im Wachzustand
-                            nicht zur Verfügung stehen, wir können sie abrufen
-                            und mit ihnen arbeiten. Der Fokus wendet sich nach
-                            innen, man erlangt Zugang zu seinen Gedanken und
-                            Gefühlen. Das ermöglicht es tiefgreifende
-                            Veränderungsprozesse auszulösen, welche intrinsische
-                            und nachhaltige Auswirkungen auf uns haben. Es
-                            sollen innere Selbstheilungskräfte und unbewusste
-                            Ressourcen gestärkt werden.
+                            nicht zur Verfügung stehen und können mit ihnen
+                            arbeiten. Innere Selbstheilungskräfte und unbewusste
+                            Ressourcen werden dabei gestärkt.
                         </p>
                         <br />
                         <p>
-                            Darüber hinaus ist uns Menschen der Hypnotische
-                            Zustand nicht fremd, wir erleben ihn täglich, wenn
-                            wir beispielsweise ein gutes Buch lesen oder einen
-                            Film schauen und vollständig in diese Welten
-                            eintauchen und alles um uns herum ausblenden. Ebenso
-                            befinden wir uns kurz vor dem Einschlafen oder
-                            direkt nach dem Aufwachen in einem Zustand, der der
-                            Hypnose ähnelt.
+                            Vielen ist gar nicht bewusst, dass uns der
+                            hypnotische Zustand nicht fremd ist. Wir erleben ihn
+                            täglich, wenn wir beispielsweise ein gutes Buch
+                            lesen oder einen Film schauen und vollständig in
+                            diese Welten eintauchen und alles um uns herum
+                            ausblenden. Ebenso befinden wir uns kurz vor dem
+                            Einschlafen oder direkt nach dem Aufwachen in einem
+                            Zustand, dem der Hypnose ähnelt.
                         </p>
                     </div>
                 </article>
@@ -256,11 +272,11 @@
                 <Faq classNames="faq" />
             </div>
         </div>
-   </div>
+    </div>
 </div>
 
 <style lang="scss">
-     .section {
+    .section {
         // --section-min-height: 100vh;
         // --section-height: 100%;
         // --section-width: 100%;
@@ -276,7 +292,7 @@
         :global(.scroll-down) {
             display: flex;
             position: absolute;
-            top: calc( 100vh - 150px);
+            top: calc(100vh - 150px);
             min-width: 50px;
             width: 50px;
             min-height: 50px;
@@ -289,7 +305,7 @@
             &:hover {
                 background: var(--secondary-hover) !important;
                 :global(.base) {
-                    --fill:var(--attention);
+                    --fill: var(--attention);
                 }
             }
         }
@@ -453,7 +469,7 @@
                 font-size: 18px;
             }
             img {
-                padding: .5rem 10px 0px 10px;
+                padding: 0.5rem 10px 0px 10px;
                 height: 100%;
                 max-width: 40px;
                 width: 100%;
@@ -494,39 +510,99 @@
                 object-fit: cover;
             }
         }
-        .contact,
-        .map {
+        .contact {
             grid-column-start: 1;
             grid-column-end: 4;
             width: 600px;
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
             box-sizing: border-box;
             align-items: center;
             justify-self: center;
             background-color: var(--primary);
+            padding: 1rem 2rem;
             p {
-                margin-bottom: 30px;
                 font-weight: 500;
                 font-weight: 300;
                 text-align: center;
-                padding: 20px;
                 color: #fff;
             }
-            
-            a {
-                text-transform: uppercase;
-                justify-self: center;
-                color:#fff;
-                &:hover {
-                    color: var(--attention);
-                    :global(.onHover){
+            .contact-buttons {
+                min-height: 45px;
+                a {
+                    text-transform: uppercase;
+                    justify-self: center;
+                    color: #fff;
+                    &:hover {
                         color: var(--attention);
-                        transition: all .2s ease-in-out !important;
+                        :global(.onHover) {
+                            color: var(--attention);
+                            transition: all 0.2s ease-in-out !important;
+                        }
+                        transition: all 0.2s ease-in-out !important;
                     }
-                    transition: all .2s ease-in-out !important;
+                }
+            }
+        }
+        .map {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            width: 600px;
+            min-height: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            box-sizing: border-box;
+            background-color: var(--primary);
+            .address-wrapper {
+                position: relative;
+                height: 100%;
+                // background-color: green;
+                width: 100%;
+                display: flex;
+                padding: 0;
+                margin: 0;
+                align-items: center;
+                justify-content: space-between;
+                justify-content: space-around;
+                flex-direction: column;
+                p {
+                    // margin-bottom: 30px;
+                    font-weight: 500;
+                    font-weight: 300;
+                    text-align: center;
+                    padding: 0px;
+                    color: #fff;
+                }
+                .address {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    p {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                }
+                .contact-buttons {
+                    a {
+                        text-transform: uppercase;
+                        justify-self: center;
+                        color: #fff;
+                        &:hover {
+                            color: var(--attention);
+                            :global(.onHover) {
+                                color: var(--attention);
+                                transition: all 0.2s ease-in-out !important;
+                            }
+                            transition: all 0.2s ease-in-out !important;
+                        }
+                    }
                 }
             }
         }
@@ -707,12 +783,11 @@
                         min-height: 100%;
                     }
                 }
-                .contact,
-                .map {
+                .contact {
                     display: flex;
                     justify-content: space-around;
                     padding: 10px;
-                    p{
+                    p {
                         margin: 0px;
                         padding: 0px;
                     }
@@ -721,12 +796,21 @@
                     min-height: 200px;
                     width: 100%;
                 }
+                .map {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 10px;
+                    max-width: 760px;
+                    height: 100%;
+                    min-height: 250px;
+                    width: 100%;
+                }
             }
             .hypnose-wrapper {
                 margin-top: 50px;
                 padding: 0 20px;
                 box-sizing: border-box;
-                h2::before{
+                h2::before {
                     background-color: var(--secondary);
                     position: absolute;
                     border-color: var(--secondary);
@@ -793,7 +877,8 @@
     @media screen and (max-width: 576px) {
         .grid {
             .subgrid-praxis {
-                .contact, .map {
+                .contact,
+                .map {
                     min-height: 280px;
                     height: 100%;
                     padding: 30px;
@@ -808,7 +893,7 @@
             }
             .hypnose-wrapper {
                 .hypnose__text {
-                    p{
+                    p {
                         text-align: left;
                     }
                 }
@@ -848,10 +933,9 @@
                     max-width: 250px;
                     border: 5px solid var(--primary);
                     border-radius: 50%;
-                }   
+                }
             }
         }
-
     }
     @media screen and (max-width: 450px) {
         .grid {
@@ -867,7 +951,6 @@
                     max-height: 350px;
                     margin-right: 30px;
                 }
-                
             }
         }
     }
@@ -934,9 +1017,7 @@
                 order: 1;
                 width: 100dvw;
                 justify-content: center;
-
             }
         }
     }
-
 </style>

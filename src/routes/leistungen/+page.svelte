@@ -30,54 +30,45 @@
             <h2>Leistungen</h2>
         </div>
         <div class="cell content">
-            <h2 class="content-headline">Mein Hypnose-Angebot</h2>
+            <!-- <h2 class="content-headline">Meine Leistungen</h2> -->
             <p>
-                Mein Hypnose-Angebot für Sie basiert auf Themengebiete, auf
-                welche ich mich spezialisiert und jeweils ein passendes Konzept
-                dazu entwickelt habe. Dabei ist es mir wichtig, durch
-                entsprechende Vorarbeit (Seelenreinigung) und das anschließende
-                Festigen (Anker setzten, Selbsthypnose verankern) das
-                angestrebte Ziel bestmöglich zu erreichen. Das ist einer der
-                Gründe, weshalb meine Hypnose-Pakete auf mindestens zwei
-                Terminen aufgebaut sind. Ein weiterer Grund ist, dass es den
-                meisten Menschen mit jedem weiteren Termin immer leichter fällt
-                in Hypnose hineinzugehen und es von Vorteil ist, die jeweiligen
-                Termine erst einmal wirken zu lassen. Darüber hinaus besteht die
-                Möglichkeit beim nächsten Termin neu aufgekommene Gedanken und
-                Gefühle anzusprechen. Wichtig ist es aber trotzdem, darauf zu
-                achten, dass die folgenden Termine nicht zu weit auseinander
-                liegen. Falls es terminlich nicht anders möglich sein sollte,
-                besteht die Möglichkeit Ihre Hypnosesitzungen auch am Stück
-                abzuhalten.
+                Im folgenden Abschnitt nenne ich einige Beispiele für
+                Anwendungsbereiche von Hypnose. Es ist jedoch wichtig zu
+                beachten, dass Hypnosearbeit auch für andere Themengebiete
+                eingesetzt werden kann. Sie können sich gerne mit jedem Anliegen
+                bei mir melden. Sollten Sie Interesse an einer Sitzung zur
+                Regression oder Reinkarnation haben, biete ich ebenfalls die
+                Möglichkeit einer Zusammenarbeit an.
             </p>
             <br />
             <p>
-                Meine Pakete sind folgendermaßen aufgebaut: Die erste Einheit
-                beinhalten ein kostenloses und unverbindliches Vorgespräch.
-                Hierbei möchte ich mir ein Bild von Ihren Erwartungen, Zielen,
-                Wünschen oder bereits vorhandenen Hypnose Erfahrungen machen.
+                <strong>Meine Pakete sind folgendermaßen aufgebaut:</strong>
+            </p>
+            <p>
+                Die erste Einheit beinhaltet ein kostenloses und unverbindliches
+                Vorgespräch. Hierbei möchte ich mir ein Bild von Ihren
+                Erwartungen oder bereits vorhandenen Hypnose-Erfahrungen machen.
                 Danach werden wir gemeinsam Ihr persönliches Hypnose-Konzept
                 besprechen. Wenn Sie sich nach dem Vorgespräch dazu entscheiden,
-                mir Ihr Vertrauen zu schenken und sich eine gemeinsame
-                Zusammenarbeit vorstellen können, legen wir direkt los und
-                stellen die Weichen, um gemeinsam an Ihrem Thema zu arbeiten. In
-                der zweiten Einheit können Gedanken und Gefühle, welche
-                nachtäglich aufgekommen sind besprochen werden und wir arbeiten
-                lösungs- und ressourcenorientiert an Ihrem Thema.
+                mir Ihr Vertrauen zu schenken, stellen wir die Weichen, um
+                gemeinsam an Ihrem Thema zu arbeiten.
+            </p>
+            <br />
+            <p>
+                In der zweiten Einheit können Gedanken und Gefühle, welche
+                nachträglich aufgekommen sind besprochen werden. Wir arbeiten
+                intensiv lösungs- und ressourcenorientiert an Ihrem Thema.
             </p>
             <br />
             <p>
                 In der dritten Einheit (optional) möchte ich Ihnen anbieten, die
-                Selbsthypnose bei Ihnen zu verankern, sodass Sie die Chance
-                haben auch selbst in Hypnose zu gehen und zu arbeiten. Wichtig
-                ist mir in der dritten Einheit ganz individuell zu arbeiten.
-                Dass bedeutet, wenn nochmal etwas aufgekommen ist, worüber Sie
-                sprechen möchten oder Ihr Thema nochmal vertiefen und verankern
-                wollen.
+                Selbsthypnose bei Ihnen zu verankern, sodass Sie die Möglichkeit
+                haben, auch selbst in Hypnose zu gehen und zu arbeiten.
             </p>
+            <br />
             <div class="wrapper-services">
                 <div class="service rauchfrei">
-                    <h2>Raucherentwöhnung</h2>
+                    <h3>Raucherentwöhnung</h3>
                     <div class="service-image">
                         <img
                             src={Rauchfrei}
@@ -89,87 +80,88 @@
                     </div>
                     <div class="service-text">
                         <p>
-                            Zigaretten enthalten nicht wenige äußerst toxische
+                            Zigaretten enthalten viele äußerst toxische
                             Substanzen, wie Stickstoffoxide, Schwefeloxide und
                             Ammoniak. Allein in Österreich sterben im Jahr
                             ungefähr 14.000 Menschen an tabakinduzierten
                             Krankheiten, wobei das Rauchen zu dem größten
                             vermeidbaren Risikofaktor für viele verschiedene
-                            Krankheiten zählt. Das und vieles mehr wissen Sie
-                            aber bereits, sonst würden Sie sich hier nicht über
-                            die Möglichkeit der Rauchentwöhnung mittels Hypnose
-                            informieren.
+                            Krankheiten zählt. Sie sind sich dessen jedoch
+                            bereits bewusst, da Sie sich hier nach Möglichkeiten
+                            zur Raucherentwöhnung durch Hypnose informieren. Das
+                            zeigt Ihren Entschluss, etwas zu verändern.
                             <br />
-                            Ich würde mich freuen, Sie kennenzulernen und Sie bei
-                            Ihrem Vorhaben, mit dem Rauchen aufzuhören, zu unterstützen.
+                            Ich freue mich darauf, Sie bei Ihrem Vorhaben, das Rauchen
+                            aufzugeben, zu unterstützen. Zusammen können wir Ihre
+                            Ziele erreichen.
                         </p>
                     </div>
                 </div>
                 <div class="service selbstwert">
-                    <h2>Selbstwertsteigerung</h2>
+                    <h3>Selbstwertsteigerung</h3>
                     <div class="service-image">
                         <img src={Selbstwert} alt="selbstwert" srcset="" />
                     </div>
                     <div class="service-text">
                         <p>
                             Wir alle sind viel zu oft von negativen Einflüssen
-                            umgeben, die sich nicht gut auf unser Selbst
-                            auswirken. Dabei wird unser Selbstwertgefühl
-                            angekratzt und beschädigt. Daher ist es wichtig,
-                            sich mit sich selbst auseinanderzusetzten, seine
-                            Gefühle, Gedanken und Handlungen einschätzen zu
-                            können, um die Möglichkeit zu haben
-                            eigenverantwortlich und selbstbewusst durch das
-                            Leben zu gehen. Des Weiteren wirkt der Selbstwert
-                            als ein wichtiger Schutzfaktor gegen Stress und ist
-                            somit ein positiver Faktor für unsere
-                            Widerstandskraft und Gesundheit.
+                            umgeben, die unser Selbstwertgefühl beeinträchtigen.
+                            Es ist daher wichtig, dass wir uns mit unseren
+                            Gefühlen, Gedanken und Handlungen auseinandersetzen.
+                            Indem wir Verantwortung für unser Handeln
+                            übernehmen, können wir selbstbewusst durchs Leben
+                            gehen. Des Weiteren wirkt der Selbstwert als ein
+                            wichtiger Schutzfaktor gegen Stress und ist somit
+                            ein positiver Faktor für unsere Widerstandskraft und
+                            Gesundheit.
                             <br />
-                            Ich würde mich freuen, Sie kennenzulernen und Sie darin
-                            zu unterstützen, Ihren Selbstwert zu steigern und sich
+                            Ich freue mich darauf, Sie kennenzulernen und Sie darin
+                            zu unterstützen, Ihren Selbstwert zu stärken und sich
                             einfach wohlzufühlen.
                         </p>
                     </div>
                 </div>
                 <div class="service digital-detox">
-                    <h2>Digital Detox</h2>
+                    <h3>Digital Detox</h3>
 
                     <div class="service-image">
                         <img src={Digitaldetox} alt="digital-detox" srcset="" />
                     </div>
                     <div class="service-text">
                         <p>
-                            Instagram, Snapchat, WhatsApp, TikTok, YouTube und
-                            vieles mehr sind unsere täglichen Begleiter, die
-                            jeden Menschen unterschiedlich beeinflussen. Wir
-                            meinen, dass dieses Thema nur Jugendliche betrifft,
-                            das ist aber falsch. Auch die Erwachsenen bleiben
-                            von der Informationsflut nicht verschont. Aber warum
-                            nutzen viele die Sozialen Medien in einem Übermaß
-                            oder bekommen ein ungutes Gefühl, wenn das Handy mal
-                            nicht in Reichweite ist? Eine mögliche Ursache
-                            könnte ein bestimmtes Hormon sein, welches bei der
-                            Handy-Nutzung aktiv wird. Dopamin ist ein
-                            Glückshormon, das im Körper ausgeschüttet wird, was
-                            dazu führt, dass wir uns gut fühlen und diesen
-                            Zustand gerne aufrechterhalten wollen. Wir haben das
-                            Bedürfnis nach mehr. Mit jedem Klingeln oder
-                            Vibrieren des Handys findet eine Art Konditionierung
-                            statt. Der Griff nach dem Handy und das Anklicken
-                            der jeweiligen Benachrichtigung führt zur
-                            Ausschüttung von Dopamin. Wir fühlen uns gut. Gerade
-                            in der heutigen Zeit ist es daher wichtig, sich die
-                            Frage zu stellen, warum wir die Sozialen Medien
-                            nutzen und wie viel wir davon brauchen? Es geht
-                            hierbei keinesfalls um die Verteufelung von Sozialen
-                            Medien, sondern vielmehr darum, sich selbst zu
-                            überlegen, wie möchte ich damit umgehen und eine
-                            annehmbare Einstellung dahingehend zu entwickeln.
+                            Instagram, WhatsApp, TikTok und andere Soziale
+                            Medien beeinflussen uns täglich auf unterschiedliche
+                            Weise. Dieses Thema betrifft nicht nur Jugendliche.
+                            Auch Erwachsene bleiben von der Informationsflut
+                            nicht verschont. Viele Menschen nutzen die Sozialen
+                            Medien jedoch in einem Übermaß oder fühlen sich
+                            unwohl, wenn das Handy nicht in Reichweite ist.
+                        </p>
+                        <br />
+                        <p>
+                            Eine häufige Ursache dafür ist Dopamin: ein
+                            Glückshormon, das bei der Handy-Nutzung
+                            ausgeschüttet wird. Es führt dazu, dass wir uns gut
+                            fühlen und diesen Zustand aufrechterhalten wollen.
+                            Es entsteht das Bedürfnis nach mehr. Mit jedem
+                            Klingeln oder Vibrieren des Handys findet eine Art
+                            Konditionierung statt: Der Griff nach dem Handy
+                            führt zur Dopamin-Ausschüttung. Wir fühlen uns gut.
+                        </p>
+                        <br />
+                        <p>
+                            In der heutigen Zeit ist es daher wichtig, sich zu
+                            fragen, warum wir die Sozialen Medien nutzen und wie
+                            viel wir wirklich davon brauchen. Es geht nicht
+                            darum, Soziale Medien zu verteufeln, sondern
+                            vielmehr darum, selbst zu entscheiden, wie wir damit
+                            umgehen möchten und eine gesunde Einstellung dazu zu
+                            entwickeln.
                         </p>
                     </div>
                 </div>
                 <div class="service tiefenentspannugn">
-                    <h2>Tiefenentspannung</h2>
+                    <h3>Tiefenentspannung</h3>
                     <div class="service-image">
                         <img
                             src={Tiefenentspannung}
@@ -187,14 +179,12 @@
                             vom Alltag nehmen, um unseren Körper und Geist in
                             Einklang zu bringen. Hierfür bietet die
                             Tiefenentspannung mittels Hypnose die perfekten
-                            Rahmenbedingungen. Ich würde mich freuen, Sie
-                            kennenzulernen und Sie auf dem Weg der
-                            Tiefenentspannung zu begleiten.
+                            Rahmenbedingungen.
                         </p>
                     </div>
                 </div>
                 <div class="service pruefungsangst">
-                    <h2>Entspannt Vortragen / Enspannt in die Prüfung</h2>
+                    <h3>Entspannt Vortragen / Enspannt in die Prüfung</h3>
                     <div class="service-image">
                         <img
                             src={Pruefungsangst}
@@ -205,18 +195,20 @@
                     <div class="service-text">
                         <p>
                             Wer kennt es nicht? Es steht eine Prüfung oder ein
-                            wichtiger Vortrag an und die Aufregung steigt in
-                            einem hoch, man bekommt schwitzige Hände oder der
-                            Herzschlag erhöht sich. Bei vielen Menschen führen
-                            solche Situationen zu einem kompletten Blackout, was
-                            Sie nachhaltig beschäftigt oder sogar belastet.
-                            Mittels Hypnose ist es möglich, sich diese
-                            Situationen genauer anzuschauen und aus einem
-                            anderen Blickwinkel zu betrachten und anzunehmen Ich
-                            möchte Sie darin zu unterstützen, entspanntere
+                            wichtiger Vortrag an und die Aufregung steigt. Wir
+                            bekommen schwitzige Hände oder unser Herzschlag
+                            erhöht sich. Bei manchen Menschen kann dies sogar zu
+                            einem kompletten Blackout führen, was sie nachhaltig
+                            beschäftigt oder belastet. Mittels Hypnose ist es
+                            möglich, sich diese Situationen genauer anzuschauen
+                            und zu verändern.
+                        </p>
+                        <br />
+                        <p>
+                            Ich möchte Sie darin unterstützen, entspanntere
                             Vorträge zu halten oder Prüfungen zu meistern und
                             zusätzlich Ihr Selbstbewusstsein zu stärken. Ich
-                            freue mich darauf Sie kennenzulernen.
+                            freue mich darauf, Sie kennenzulernen.
                         </p>
                     </div>
                 </div>
@@ -228,7 +220,6 @@
 <style lang="scss">
     .grid {
         --grid-row-gap: 2rem;
-
         padding: var(--grid-padding);
         background-color: var(--bg-grid);
         min-height: var(--grid-min-height);
@@ -270,9 +261,11 @@
             padding: 10px 40px;
             background-color: var(--primary-hover);
             width: auto !important;
+            min-width: 300px;
             left: 50%;
             transform: translateX(-50%);
         }
+        
         img {
             width: 100%;
             height: 100%;
@@ -284,8 +277,10 @@
     }
 
     .content {
+        padding: 0 1rem;
         .content-headline {
             text-align: center;
+            margin-bottom: 0.5rem;
         }
         max-width: var(--content-width, 1240px);
         justify-self: center;
@@ -318,6 +313,7 @@
             padding-bottom: 1.5rem;
             margin-bottom: 1.5rem;
             overflow: hidden;
+            //----------------------------------------------------------------- überschriften ---------------------------------------------
             &:nth-child(odd) {
                 .service-image {
                     float: left;
@@ -336,7 +332,7 @@
     }
 
     @media screen and (max-width: 640px) {
-        .content{
+        .content {
             padding: 0 1rem;
         }
         .service {

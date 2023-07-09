@@ -2,28 +2,27 @@
     import { page } from "$app/stores";
     import BurgerMenu from "./BurgerMenu.svelte";
 
-
     let open = false;
 
-    
     $: innerWidth = 0;
 </script>
 
 <svelte:window bind:innerWidth />
 <!-- content here -->
-<nav
-    class="navigation"
->
+<nav class="navigation">
     <BurgerMenu bind:open className="burger" />
     <ul class="menu-entries" class:mobile={innerWidth < 680 && open == true}>
         <li class:active={$page.url.pathname === "/"}>
             <a href="/">Startseite</a>
         </li>
+        <li class:active={$page.url.pathname === "/ueber-mich"}>
+            <a href="/ueber-mich">Über Mich</a>
+        </li>
         <li class:active={$page.url.pathname === "/leistungen"}>
             <a href="/leistungen">Leistungen</a>
         </li>
-        <li class:active={$page.url.pathname === "/ueber-mich"}>
-            <a href="/ueber-mich">Über Mich</a>
+        <li class:active={$page.url.pathname === "/onlinehypnose"}>
+            <a href="/onlinehypnose">Onlinehypnose</a>
         </li>
         <li class:active={$page.url.pathname === "/kontakt"}>
             <a href="/kontakt">Kontakt</a>
@@ -98,7 +97,6 @@
         }
     }
 
-
     @media screen and (max-width: 680px) {
         nav {
             display: flex;
@@ -141,9 +139,26 @@
                         text-align: center;
                         align-self: center;
                         padding: 20px;
-
                         height: 100%;
                         width: 100%;
+                    }
+                    a::before {
+                        bottom: 0.5rem;
+                    }
+                    &:hover {
+                        a::before {
+                            content: " ";
+                            bottom: 0.5rem;
+                            transition: all 0.2s ease-in-out;
+                        }
+                        transition: all 0.2s ease-in-out;
+                    }
+                }
+                .active {
+                    a::before {
+                        content: " ";
+                        bottom: 0.5rem;
+                        border-radius: 5px;
                     }
                 }
             }
