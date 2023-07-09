@@ -9,7 +9,7 @@
         </header>
         <slot name="body"><!-- optional fallback --></slot>
         <div aria-label="close-modal" role="button" tabindex="0" aria-live="polite" class="customIcon" on:mousedown={(e)=>dialog.close()}>
-            close
+            Schließen
         </div>
     </article>
 </dialog>

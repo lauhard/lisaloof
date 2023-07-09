@@ -162,9 +162,9 @@
                     </p>
 
                     <div class="contact-buttons">
-                        <a class="cta" type="button" href="tel:+4369919048032">
+                        <a class="cta" type="button" href="tel:+4367761750953">
                             <PhoneSvg width="30px" height="22px" classNames="onHover" --fill="var(--white)" ></PhoneSvg>
-                            +43 69919048032
+                            +43 67761750953
                         </a>
 
                         <a class="cta" type="button" href="/kontakt">
@@ -181,7 +181,7 @@
                 </div>
                 <div class="subgrid-cell map">
                     <p>
-                        Meine Praxis befindet sich in der Feldgasse 34A 9020 im
+                        Meine Praxis befindet sich in der Waaggasse 1 im
                         Zentrum von Klagenfurt.
                     </p>
                     <div class="contact-buttons">
@@ -195,7 +195,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="cell cell-hypnose">
             <div class="hypnose-wrapper">
@@ -262,18 +261,18 @@
 
 <style lang="scss">
      .section {
-        --section-min-height: 100vh;
-        --section-height: 100%;
-        --section-width: 100%;
-        --section-margin: 90px 0 0 0;
-        --section-padding: 0 0 0 0;
-        height: var(--section-height);
-        min-height: var(--section-min-height);
-        width: var(--section-width);
-        margin: var(--section-margin);
-        padding: var(--section-padding);
-        background-color: var(--bg-section);
-        position: relative;
+        // --section-min-height: 100vh;
+        // --section-height: 100%;
+        // --section-width: 100%;
+        // --section-margin: 90px 0 0 0;
+        // --section-padding: 0 0 0 0;
+        // height: var(--section-height);
+        // min-height: var(--section-min-height);
+        // width: var(--section-width);
+        // margin: var(--section-margin);
+        // padding: var(--section-padding);
+        // background-color: var(--bg-section);
+        // position: relative;
         :global(.scroll-down) {
             display: flex;
             position: absolute;
@@ -311,14 +310,6 @@
         }
     }
     .grid {
-        --grid-columns-desktop: repeat(2, 50vw, 50vw);
-        --grid-rows-desktop: auto;
-        --grid-rows-mobile: 210px 240px 380px auto;
-        --grid-row-gap: 4rem;
-        --grid-height: auto;
-        --grid-min-height: 100dvh;
-        --grid-width: 100%;
-
         grid-template-columns: var(--grid-columns-desktop);
         grid-template-rows: var(--grid-rows-desktop);
         grid-gap: var(--grid-gap, 0px);
@@ -329,7 +320,6 @@
         padding: var(--grid-padding, 0);
         box-sizing: border-box;
         overflow: hidden;
-
     }
     .cell {
         background-color: var(--bg-grid-cell, transparent);
@@ -606,9 +596,6 @@
                     width: 100%;
                 }
             }
-            // .greeter-wrapper{
-            //     margin-top: 0rem;
-            // }
         }
     }
     @media screen and (max-width: 1200px) {
@@ -617,11 +604,9 @@
         }
         .background-svg-banner {
             bottom: 0px;
-            height: 100dvh;
             height: 100%;
-            height: 100vh;
             max-height: 100dvh;
-            max-height: 100%;
+            max-height: 100vh;
             .svg-wrapper {
                 height: 100px !important;
                 position: absolute;
@@ -776,17 +761,7 @@
     }
     @media screen and (max-width: 992px) {
         .background-svg-banner {
-            bottom: 0px;
-            height: 100dvh;
-            height: 100vh;
-            max-height: 100dvh;
-            max-height: 100%;
             .svg-wrapper {
-                height: 100px !important;
-                position: absolute;
-                top: 10%;
-                left: 50%;
-                transform: translateX(-50%);
                 :global(.background-svg) {
                     height: 700px !important;
                 }
@@ -796,7 +771,7 @@
             .cell:nth-of-type(2) {
                 max-height: 100%;
                 height: 350px;
-                margin-top: 90px;
+                margin-top: 100px;
                 min-height: 200px;
                 order: 1;
                 width: 100dvw;
@@ -816,9 +791,7 @@
         }
     }
     @media screen and (max-width: 576px) {
-
         .grid {
-           
             .subgrid-praxis {
                 .contact, .map {
                     min-height: 280px;
@@ -840,23 +813,10 @@
                     }
                 }
             }
-            .hypnose-wrapper {
-                .hypnose__text {
-                    p{
-                        text-align: left;
-                    }
-                }
-            }
         }
     }
     @media screen and (max-width: 510px) {
         .background-svg-banner {
-            bottom: 0px;
-            height: 100dvh;
-            height: 100%;
-            height: 100vh;
-            max-height: 100dvh;
-            max-height: 100%;
             .svg-wrapper {
                 height: 100px !important;
                 position: absolute;
@@ -913,12 +873,6 @@
     }
     @media screen and (max-width: 380px) {
         .background-svg-banner {
-            bottom: 0px;
-            height: 100dvh;
-            height: 100%;
-            height: 100vh;
-            max-height: 100dvh;
-            max-height: 100%;
             .svg-wrapper {
                 height: 100px !important;
                 position: absolute;
@@ -960,9 +914,6 @@
     }
     @media screen and (max-width: 360px) and (min-width: 300px) {
         .background-svg-banner {
-            bottom: 0px;
-            height: 100dvh;
-            max-height: 100dvh;
             .svg-wrapper {
                 height: 100px !important;
                 position: absolute;
@@ -983,17 +934,7 @@
                 order: 1;
                 width: 100dvw;
                 justify-content: center;
-                .profile-image-wrapper {
-                    position: relative;
-                    bottom: 0;
-                    left: 0;
-                    height: 250px;
-                    max-height: 250px;
-                    width: 250px;
-                    max-width: 250px;
-                    border: 5px solid var(--primary);
-                    border-radius: 50%;
-                }
+
             }
         }
     }

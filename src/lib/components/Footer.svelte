@@ -17,9 +17,9 @@
             <div class="address-wrapper">
                 <h5>Kontakt</h5>
                 <p>Lisa-Marie Loof</p>
-                <p>Praxisstraße 33</p>
+                <p>Waagplatz 1</p>
                 <p>9020 Klagenfurt</p>
-                <p>Austria</p>
+                <p>Österreich</p>
             </div>
             <div class="contact-wrapper ">
                 <ul>

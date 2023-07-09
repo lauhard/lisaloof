@@ -136,7 +136,28 @@ p, .text {
     // text-decoration: none;
     // list-style: none;
 }
-
+.section {
+    --section-min-height: 100vh;
+    --section-height: 100%;
+    --section-width: 100%;
+    --section-margin: 90px 0 0 0;
+    --section-padding: 0 0 0 0;
+    height: var(--section-height);
+    min-height: var(--section-min-height);
+    width: var(--section-width);
+    margin: var(--section-margin);
+    padding: var(--section-padding);
+    background-color: var(--bg-section);
+    position: relative;
+}
+.grid{
+    --grid-columns-desktop: repeat(2, 50vw, 50vw);
+    --grid-rows-desktop: auto;
+    --grid-row-gap: 4rem;
+    --grid-height: auto;
+    --grid-min-height: 100dvh;
+    --grid-width: 100%;
+}
 .hover {
     animation: hover 1.5s linear infinite;
 }
