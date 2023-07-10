@@ -1,8 +1,5 @@
 <script lang="ts">
-    import Uebermich1 from "$lib/images/ueber-mich1.webp";
-    import Uebermich2 from "$lib/images/ueber-mich2.webp";
-    import Uebermich3 from "$lib/images/ll3.jpg";
-    import Uebermich4 from "$lib/images/ll4.jpg";
+    import Uebermich from "$lib/images/ueber-mich.webp";
     import Cert from "$lib/images/cert.webp";
     import Cert2 from "$lib/images/cert2.webp";
 </script>
@@ -11,50 +8,15 @@
     <title>Über mich</title>
     <link rel="preload" as="image" href={Cert} />
     <link rel="preload" as="image" href={Cert2} />
-    <link rel="preload" as="image" href={Uebermich2} />
-    <link rel="preload" as="image" href={Uebermich1} />
+    <link rel="preload" as="image" href={Uebermich} />
 </svelte:head>
 
 <div class="section">
     <div class="grid">
-        <!-- <div class="cell hero">
-            <div class="image-wrapper">
-                <div class="one">
-                    <img
-                        class="ll1"
-                        src={Uebermich2}
-                        alt=""
-                        srcset=""
-                        width="100%"
-                        height="300px"
-                    />
-                </div>
-                <div class="two">
-                    <img
-                        class="ll2"
-                        src={Uebermich1}
-                        alt=""
-                        srcset=""
-                        width="100%"
-                        height="300px"
-                    />
-                </div>
-            </div>
-            <div class="mobile-image-wrapper">
-                <img
-                    class="ll1"
-                    src={Uebermich1}
-                    alt=""
-                    srcset=""
-                    width="100%"
-                    height="300px"
-                />
-            </div>
-            <h2>Über Mich</h2>
-        </div> -->
+       
         <div class="cell hero">
             <img
-                src={Uebermich3}
+                src={Uebermich}
                 alt=""
                 srcset=""
                 width="100%"
@@ -203,42 +165,6 @@
         overflow: hidden;
         justify-self: center;
         max-width: var(--content-width);
-        // .image-wrapper {
-        //     display: flex;
-        //     flex-direction: row;
-        //     height: 100%;
-        //     width: 100%;
-        //     img {
-        //         // width: 100%;
-        //         height: 100%;
-        //         object-fit: contain;
-        //         object-position: center;
-        //         // overflow: hidden;
-        //     }
-        //     .one {
-        //         // min-width: 50%;
-        //         width: 50%;
-        //         margin-right: 10px;
-        //         // height: 100%;
-        //         // min-height: 100%;
-        //         .ll1 {
-        //             // width: 100%;
-        //             object-fit: cover;
-        //             object-position: left;
-        //         }   
-
-        //     }
-        //     .two {
-        //         // width: 50%;
-        //         width: 50%;
-        //         // height: 100%;
-        //         .ll2 {
-        //             width: 100%;
-        //             object-fit: cover;
-        //             object-position: right;
-        //         }
-        //     }
-        // }
         img {
             width: 100%;
             height: 100%;
@@ -272,7 +198,6 @@
         }
         max-width: var(--content-width);
         justify-self: center;
-        // background-color: red;
         ul {
             margin-top: 1rem;
             padding-left: 1rem;
@@ -333,56 +258,5 @@
             justify-self: center;
         }
     }
-    @media screen and (max-width: 1200px) {
-        .image-wrapper {
-            display: flex;
-            width: 100% !important;
-            height: 100%;
-            // justify-content: center;
-            .one {
-                margin-right: 10px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    // object-position: 0px 0px;
-                    object-position: center;
-                    overflow: hidden;
-                }
-            }
-
-            // display: none !important;
-        }
-
-        @media (orientation: landscape) {
-        }
-    }
-    @media screen and (max-width: 650px) {
-        .image-wrapper {
-            // .ll1 {
-            //     width: 100%;
-            //     height: 100%;
-            //     object-fit: cover;
-            //     overflow: hidden;
-            // }
-            // .ll2 {
-
-            // }
-            display: none !important;
-        }
-        .mobile-image-wrapper {
-            width: 100%;
-            height: 100%;
-            img {
-                height: 100%;
-                object-fit: cover;
-                object-position: 0px 0px;
-                object-position: right;
-                overflow: hidden;
-            }
-        }
-
-        @media (orientation: landscape) {
-        }
-    }
+  
 </style>
