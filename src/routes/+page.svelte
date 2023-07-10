@@ -3,7 +3,6 @@
     import RoundButton from "$lib/components/RoundButton.svelte";
     import ArrowDownSvg from "$lib/components/svgs/ArrowDownSvg.svelte";
     import { onMount } from "svelte";
-    import { wait } from "$lib/utils";
     import { SliceZone } from "@prismicio/svelte";
     import Popup from "$lib/components/slices/Popup.svelte";
     import Headline from "$lib/components/Headline.svelte";
@@ -33,22 +32,9 @@
     $: popupState = false;
 
     onMount(async () => {
-       
-        popupState = $showPopup;
-        console.log("popupState", popupState);
-        
-        if($showPopup == true && $showPopup != undefined) {
-            let ok = await wait(5000);
-            popupState = ok == "finished" ? true : false;
-            
-            console.log("popupState", popupState);
+        if( $showPopup != undefined) {
+            popupState = $showPopup;
         }
-        else {
-            popupState = false;
-            console.log("popupState", popupState);
-
-        }
-        
     });
 </script>
 

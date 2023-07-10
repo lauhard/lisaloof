@@ -4,7 +4,7 @@
     import { createEventDispatcher } from 'svelte';
     export let action="";
     const dispatch = createEventDispatcher();
-    export let myForm:HTMLFormElement;
+    export let myForm:HTMLFormElement = null;
 //    console.log("action:", action)
 </script>
 <div class="form-wrapper">

@@ -5,7 +5,7 @@
     import { validate } from "$lib/zod/helper/forms.js";
     import Dropdown from '$lib/components/Dropdown.svelte';
     import Checkbox from '$lib/components/Checkbox.svelte';
-
+    import { toast } from '@zerodevx/svelte-toast'
 
     export let form: ActionData;
     export let data: PageServerData;
@@ -17,7 +17,8 @@
     let firstnameError:string | undefined="";
     let emailError:string | undefined="";
     let phoneError:string | undefined="";
-
+    let myForm: HTMLFormElement;
+  
      /**
      * brings up the result of the progressive enhanced form
      * for add and update action
@@ -30,6 +31,7 @@
         const { success } = result.data;
         if(success) {
             console.log("success", success);
+            toast.push('Vielen Dank für Ihre Anfrage. Ich werde mich schnellstmöglich bei Ihnen melden.')
         } 
     }
 </script>
@@ -45,7 +47,7 @@
              <p>
                  Schicken Sie eine unverbindliche Anfrage für Ihr kostenloses Erstgespräch oder einen Termin.
              </p>
-             <Form on:formaction={formActionResult} --form-width="100%" action="{action}">
+             <Form bind:myForm on:formaction={formActionResult} --form-width="100%" action="{action}">
                  <div class="block">
                      <label for="serviceType">Wählen Sie einen Termintyp
                          <Dropdown id={"serviceType"} options={

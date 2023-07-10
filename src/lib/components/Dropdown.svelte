@@ -20,11 +20,16 @@
         },
         {
             id:4,
-            key:"Lampenfieber",
-            value:"Lampenfieber",
+            key:"Entspannt-Vortragen-Entspannt-in-die-Prüfung",
+            value:"Entspannt Vortragen/ Entspannt in die Prüfung",
         },
         {
             id:5,
+            key:"Online-Hypnose",
+            value:"Online Hypnose",
+        },
+        {
+            id:6,
             key:"sonstiges",
             value:"Sonstige Anfragen",
         }

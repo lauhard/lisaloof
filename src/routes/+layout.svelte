@@ -9,7 +9,7 @@
     import Navigation from "$lib/components/Navigation.svelte";
     import Logo from "$lib/components/Logo.svelte";
     import Footer from "$lib/components/Footer.svelte";
-   
+    import { SvelteToast } from '@zerodevx/svelte-toast'
 
     inject({ mode: dev ? 'development' : 'production' });
 
@@ -56,6 +56,7 @@
        <Footer></Footer>
     </div>
 {/key}
+<SvelteToast options={{ classes: ['info'], duration: 8000, intro: { y: -64 } }}/>
 
 
 <style lang="scss">

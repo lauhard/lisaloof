@@ -4,7 +4,6 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async (data) => {
     const { fetch, request, route, cookies } = data;
-    console.log("cookies", cookies.get("aktion-popup"))
     const popup = cookies.get("aktion-popup");
     const slug = route.id == '/' ? 'homepage' : route.id;
     // const homepageUID = slug  // Update for the UID of your homepage
