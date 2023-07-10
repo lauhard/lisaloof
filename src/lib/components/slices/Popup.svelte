@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { showPopup } from '$lib/stores/popup';
 	import Modal from "$lib/components/Modal.svelte";
 	import type { Slice } from "@prismicio/client";
     import { onMount } from "svelte";
@@ -67,7 +68,7 @@
 			</div>
 			
 			<div class="button-wrapper">
-				<button aria-label="close-modal" tabindex="0" aria-live="polite" class="cta" on:mousedown={(e)=>dialog.close()} >
+				<button aria-label="close-modal" tabindex="0" aria-live="polite" class="cta" on:mousedown={(e)=>{$showPopup=false; dialog.close();}} >
 					ausblenden
 				</button>
 				<button aria-label="close-modal" type="submit" tabindex="0" aria-live="polite" class="danger" on:mousedown={(e)=>conformationMessage(e)} >

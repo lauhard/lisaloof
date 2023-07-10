@@ -37,13 +37,16 @@
         popupState = $showPopup;
         console.log("popupState", popupState);
         
-        if($showPopup == true) {
+        if($showPopup == true && $showPopup != undefined) {
             let ok = await wait(5000);
             popupState = ok == "finished" ? true : false;
-            $showPopup=false;
+            
+            console.log("popupState", popupState);
         }
         else {
             popupState = false;
+            console.log("popupState", popupState);
+
         }
         
     });

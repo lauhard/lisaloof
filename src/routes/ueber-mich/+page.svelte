@@ -1,6 +1,8 @@
 <script lang="ts">
     import Uebermich1 from "$lib/images/ueber-mich1.webp";
     import Uebermich2 from "$lib/images/ueber-mich2.webp";
+    import Uebermich3 from "$lib/images/ll3.jpg";
+    import Uebermich4 from "$lib/images/ll4.jpg";
     import Cert from "$lib/images/cert.webp";
     import Cert2 from "$lib/images/cert2.webp";
 </script>
@@ -15,12 +17,12 @@
 
 <div class="section">
     <div class="grid">
-        <div class="cell hero">
+        <!-- <div class="cell hero">
             <div class="image-wrapper">
                 <div class="one">
                     <img
                         class="ll1"
-                        src={Uebermich1}
+                        src={Uebermich2}
                         alt=""
                         srcset=""
                         width="100%"
@@ -30,7 +32,7 @@
                 <div class="two">
                     <img
                         class="ll2"
-                        src={Uebermich2}
+                        src={Uebermich1}
                         alt=""
                         srcset=""
                         width="100%"
@@ -49,6 +51,16 @@
                 />
             </div>
             <h2>Über Mich</h2>
+        </div> -->
+        <div class="cell hero">
+            <img
+                src={Uebermich3}
+                alt=""
+                srcset=""
+                width="100%"
+                height="300px"
+            />
+            <h2>Über mich</h2>
         </div>
         <div class="cell about-me">
             <h2 class="content-headline">Herzlich Willkommen</h2>
@@ -191,29 +203,49 @@
         overflow: hidden;
         justify-self: center;
         max-width: var(--content-width);
-        .image-wrapper {
-            display: flex;
-            flex-direction: row;
-            height: 100%;
+        // .image-wrapper {
+        //     display: flex;
+        //     flex-direction: row;
+        //     height: 100%;
+        //     width: 100%;
+        //     img {
+        //         // width: 100%;
+        //         height: 100%;
+        //         object-fit: contain;
+        //         object-position: center;
+        //         // overflow: hidden;
+        //     }
+        //     .one {
+        //         // min-width: 50%;
+        //         width: 50%;
+        //         margin-right: 10px;
+        //         // height: 100%;
+        //         // min-height: 100%;
+        //         .ll1 {
+        //             // width: 100%;
+        //             object-fit: cover;
+        //             object-position: left;
+        //         }   
+
+        //     }
+        //     .two {
+        //         // width: 50%;
+        //         width: 50%;
+        //         // height: 100%;
+        //         .ll2 {
+        //             width: 100%;
+        //             object-fit: cover;
+        //             object-position: right;
+        //         }
+        //     }
+        // }
+        img {
             width: 100%;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                overflow: hidden;
-            }
-            .one {
-                min-width: 50%;
-                width: 50%;
-                min-height: 100%;
-            }
-            .two {
-                width: 50%;
-                height: 100%;
-                .ll2 {
-                    object-fit: cover;
-                }
-            }
+            height: 100%;
+            object-fit: cover;
+            object-position: 20px -70px;
+            object-position:  center;
+            overflow: hidden;
         }
         h2 {
             position: absolute;
