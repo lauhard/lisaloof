@@ -4,9 +4,16 @@
     export let labelText= "label text"
     export let disabled=false
     export let checked=false
+    export let required=false
+    export let classNames=""
 </script>
-<label for="{id}">
-    <input type="checkbox" id="{id}" name="{id}" {disabled} {checked}>
+<label class="base {classNames}" for="{id}">
+    <input type="checkbox" id="{id}" name="{id}" {disabled} {checked} required={required}>
     {labelText}
 </label>
-<style lang="scss"></style>
+<style lang="scss">
+   .base{
+   
+   }
+  
+</style>

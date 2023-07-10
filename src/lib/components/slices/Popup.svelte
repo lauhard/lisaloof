@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Checkbox from '$lib/components/Checkbox.svelte';
 	import { showPopup } from '$lib/stores/popup';
 	import Modal from "$lib/components/Modal.svelte";
 	import type { Slice } from "@prismicio/client";
@@ -34,14 +35,6 @@
             dialog.close();
         } 
     }
-	const conformationMessage = (e)=>{
-		const ok = confirm("Wollen Sie diese Benachrichtigung wirklich für die nächsten 7 Tage ausblenden?\n Damit erhalten Sie in dieser Zeit keine Aktionsangebote mehr.");
-		console.log(ok);
-		if(ok){
-			myForm.requestSubmit();
-			dialog.close();
-		}
-	}
 </script>
 
 <svelte:head />
@@ -71,14 +64,21 @@
 				<button aria-label="close-modal" tabindex="0" aria-live="polite" class="cta" on:mousedown={(e)=>{$showPopup=false; dialog.close();}} >
 					ausblenden
 				</button>
-				<button aria-label="close-modal" type="submit" tabindex="0" aria-live="polite" class="danger" on:mousedown={(e)=>conformationMessage(e)} >
+				<button aria-label="close-modal" type="submit" tabindex="0" aria-live="polite" class="danger" >
 					nicht mehr anzeigen
 				</button>
+				<label for="no_notification">
+					<Checkbox classNames={"notify"} id="no_notification" labelText="Ich möchte für die nächsten 5 Tage keine Benachrichtigung über Aktionen erhalten." required={true}></Checkbox>
+				</label>
 			</div>
+			
 			</Form>
 		</Modal>
 <style lang="scss">
-	
+	:global(.notify){
+		font-size: 16px;
+    	font-weight: 300;
+	}
 	.header {
 		display: flex;
 		align-items: center;

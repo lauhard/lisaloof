@@ -16,6 +16,7 @@
 <style lang="scss">
     .customModal {
         width: 100%;
+        height: 100%;
         max-width: 800px;
         header{
             display: flex;
