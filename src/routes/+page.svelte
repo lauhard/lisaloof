@@ -20,18 +20,32 @@
     import type { PrismicDocument } from "@prismicio/client";
     import type { PageServerData } from "./$types";
     import Faq from "$lib/components/FAQ.svelte";
+    import { showPopup } from "$lib/stores/popup";
 
     export let data: PageServerData;
     export let document: PrismicDocument = data?.document as PrismicDocument;
+    export let cookieState: string = data?.popup ==  undefined ? "accepted" : data?.popup;
     const popup = document.data.body.filter(
         (s: { slice_type: string }) => s.slice_type == "popup"
     );
 
-    $: showPopup = false;
+    // $: showPopup = false;
+    $: popupState = false;
 
     onMount(async () => {
-        let ok = await wait(5000);
-        showPopup = ok == "finished" ? true : false;
+       
+        popupState = $showPopup;
+        console.log("popupState", popupState);
+        
+        if($showPopup == true) {
+            let ok = await wait(5000);
+            popupState = ok == "finished" ? true : false;
+            $showPopup=false;
+        }
+        else {
+            popupState = false;
+        }
+        
     });
 </script>
 
@@ -56,7 +70,7 @@
 </div>
 
 <div class="section">
-    {#if showPopup}
+    {#if popupState && cookieState == "accepted"}
         <!-- content here -->
         <SliceZone slices={popup} components={{"popup":Popup}} />
     {/if}
@@ -301,7 +315,7 @@
             border: 1px solid white;
             left: calc(50% - 22.5px);
             background: var(--secondary);
-            z-index: 9999;
+            z-index: 10;
             &:hover {
                 background: var(--secondary-hover) !important;
                 :global(.base) {
@@ -456,24 +470,7 @@
             color: var(--text);
         }
         .line {
-            display: flex;
-            flex-direction: row;
-            max-width: 1000px;
             margin: 0 auto;
-            p {
-                line-height: 1.9rem;
-                font-weight: 300;
-                font-family: var(--font-family, "Segoe UI");
-                color: var(--text);
-                font-size: 1rem;
-                font-size: 18px;
-            }
-            img {
-                padding: 0.5rem 10px 0px 10px;
-                height: 100%;
-                max-width: 40px;
-                width: 100%;
-            }
         }
         .intro {
             line-height: 1.9rem;
@@ -628,8 +625,11 @@
             box-shadow: none;
             padding: 0;
             border-radius: 0px;
+            display: flex;
+            flex-direction: row;
             .hypnose__image {
                 max-width: 350px;
+                min-width: 350px;
                 max-height: 350px;
                 margin-right: 30px;
                 margin-bottom: 10px;
@@ -871,6 +871,9 @@
                     border: 5px solid var(--primary);
                     border-radius: 50%;
                 }
+            }
+            .hypnose {
+                display: block
             }
         }
     }

@@ -27,6 +27,7 @@
   --svg-icon-fill: #060000;
   --svg-icon-stroke: #060000;
   --font-family: "Segoe UI", sans-serif, -apple-system !important;
+  --danger:#d62323e0 !important;
 }
 
 ::-webkit-scrollbar {
@@ -124,7 +125,6 @@ h3.decorator::before {
 a {
   text-decoration: none;
   color: var(--text);
-  font-size: 14px;
 }
 
 li, p {
@@ -139,6 +139,11 @@ p, .text {
   padding: 0;
   font-size: 18px;
   color: var(--text);
+}
+
+.svg-icons {
+  stroke: var(--svg-icon-stroke);
+  fill: var(--svg-icon-fill);
 }
 
 .section {
@@ -165,16 +170,15 @@ p, .text {
   --grid-width: 100%;
 }
 
+.content {
+  --content-padding:0 1rem;
+}
+
 .hover {
   animation: hover 1.5s linear infinite;
 }
 
-.svg-icons {
-  stroke: var(--svg-icon-stroke);
-  fill: var(--svg-icon-fill);
-}
-
-.cta {
+.cta, .simple, .danger {
   background-color: var(--secondary);
   font-family: var(--font-family, "Segoe UI");
   box-sizing: border-box;
@@ -193,17 +197,61 @@ p, .text {
   justify-self: center;
   text-align: center;
   margin-bottom: 10px;
+  display: inline-block;
 }
-.cta svg {
+.cta svg, .simple svg, .danger svg {
   margin-top: -3px;
   margin-right: 5px;
 }
-.cta:hover {
+.cta:hover, .simple:hover, .danger:hover {
   background-color: var(--secondary-hover);
   color: #fff;
 }
-.cta:hover a {
+.cta:hover a, .simple:hover a, .danger:hover a {
   color: var(--text);
+}
+
+.simple, .danger {
+  background-color: transparent;
+}
+.simple:hover, .danger:hover {
+  background-color: var(--secondary-hover);
+  color: #fff;
+}
+.simple:hover a, .danger:hover a {
+  color: var(--text);
+}
+
+.danger {
+  font-weight: bold;
+  display: inline-block;
+}
+.danger:hover {
+  background-color: var(--danger) !important;
+  color: #fff;
+}
+.danger:hover a {
+  color: var(--text);
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+}
+.line p {
+  font-weight: 300;
+  font-family: var(--font-family, "Segoe UI");
+  color: var(--text);
+  font-size: 1rem;
+  font-size: 18px;
+  line-height: 1.9rem;
+}
+.line img {
+  padding: 0.5rem 10px 0px 10px;
+  height: 100%;
+  max-width: 40px;
+  width: 100%;
 }
 
 html {

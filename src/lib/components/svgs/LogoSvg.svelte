@@ -19,7 +19,7 @@
     })
 </script>
 
-<svg id="logoSvg" class="{className}" {width} {height} {viewBox}>
+<svg id="logoSvg" class="base {className}" {width} {height} {viewBox}>
     <g id="logo">
         <path
             id="tree"
@@ -285,6 +285,9 @@
         --leaves-overlay:#74cfbd;
         --tree-color:#8f7158;
         --tree-overlay:#2f2f2f;
+    }
+    .base{
+        
     }
     #leaves-group[data-animation="true"] {
         .overlay, .leave{

@@ -11,17 +11,12 @@
     import Footer from "$lib/components/Footer.svelte";
    
 
-
-
     inject({ mode: dev ? 'development' : 'production' });
-
-
 
 
     export let data: LayoutData;
 
-
-
+    
     const offset = 400;
 
     let oldScroll: number | undefined = undefined;

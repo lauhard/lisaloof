@@ -277,7 +277,7 @@
     }
 
     .content {
-        padding: 0 1rem;
+        padding: var(--content-padding, 0 1rem);
         .content-headline {
             text-align: center;
             margin-bottom: 0.5rem;

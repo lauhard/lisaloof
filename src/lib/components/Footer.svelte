@@ -108,10 +108,14 @@
             margin: 0;
             padding: 0;
             list-style: none;
+            font-size: 16px;
+
         }
         a,
         p {
             color: #fff;
+            font-size: 16px;
+
         }
         a:hover{
             color:var(--primary);
@@ -140,16 +144,17 @@
         height: 100%;
         order: 1;
         bottom: 0px;
+        position: relative;
+        justify-content: start;
         .svg-wrapper {
             position: absolute;
+            align-items: center;
             height: 100%;
-            left: 10px;
-            bottom: 10px;
-            padding:15px;
+            left: 30px;
             :global(.footer-background-svg) {
-                position: relative;
-                height: 100%;
-                max-width:300px;
+                max-width:220px;
+                height:100%;
+                max-height: 500px;
                 z-index: 0 !important;
             }
         }
@@ -157,7 +162,6 @@
     .contact {
         order: 2;
         justify-content: left;
-
         .address-wrapper {
             width: 250px;
         }
@@ -183,7 +187,7 @@
             }
         }
     }
-    @media screen and (max-width: 705px) {
+    @media screen and (max-width: 875px) {
         footer {
             .grid {
                 .cell {
@@ -191,19 +195,20 @@
                 }
                 .logo{
                     position: absolute;
-                    order: 5;
                     grid-column: span auto;
                     grid-row: span auto;
                     right:-70%;
                     height: 100%;
-                    bottom: 10px;
-
+                    justify-content: center;
+                    align-items: center;
+                    justify-self: center;
+                    align-self: center;
                     .svg-wrapper {
-                        position: absolute;
-                        height: 90%;
-                        bottom: 10px;
+                        // position: absolute;
+                        height: 80%;
+                        // bottom: 10px;
                         width: 100%;
-                        max-width: 100%;
+                        // max-width: 100%;
                         :global(.footer-background-svg) {
                             position: relative;
                             height: 100%;
@@ -229,17 +234,17 @@
                     grid-row: span auto;
                     height: 100%;
                     .svg-wrapper {
-                        position: absolute;
-                        bottom: 0px;
+                        // position: absolute;
+                        // bottom: 0px;
                         right:2%;
-                        height: 100%;
+                        // height: 100%;
                         width: 100%;
                         max-width: 100%;
                         :global(.footer-background-svg) {
                             position: relative;
-                            height: 100%;
-                            width: 100%;
-                            max-width: 100%;
+                            // height: 100%;
+                            // width: 100%;
+                            // max-width: 100%;
                         }
                     }
                 }

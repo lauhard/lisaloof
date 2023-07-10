@@ -25,12 +25,12 @@
 <style lang="scss">
     :global(#logoSvg) {
         width: auto;
-        // z-index: 100000;
         display: flex;
         vertical-align: center;
     }
     .logo-wrapper {
-        min-width: 220px;
+        min-width: 15rem;
+        // width: 22rem;
         display: flex;
         flex-direction: row;
         vertical-align: center;
@@ -47,7 +47,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid white;
+        outline: none;
+        
+        // border: 1px solid white;
     }
     .brand-wrapper {
         display: flex;

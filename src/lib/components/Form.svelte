@@ -4,11 +4,12 @@
     import { createEventDispatcher } from 'svelte';
     export let action="";
     const dispatch = createEventDispatcher();
+    export let myForm:HTMLFormElement;
 //    console.log("action:", action)
 </script>
 <div class="form-wrapper">
 
-<form method="POST" use:enhance={(e)=>formAction(e, dispatch)} action="?/{action}">
+<form bind:this={myForm} method="POST" use:enhance={(e)=>formAction(e, dispatch)} action="?/{action}">
     <slot></slot>
 </form>
    

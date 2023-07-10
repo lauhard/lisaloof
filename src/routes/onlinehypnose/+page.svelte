@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Checkmark from '$lib/svg/checkmark.svg';
     import OnlineHypnose from "$lib/images/online-hypnose.webp";
 </script>
 
@@ -37,23 +38,58 @@
                 Möglichkeit dafür.
             </p>
             <h4>Voraussetzungen für eine erfolgreiche Online-Hypnose:</h4>
-            <ul>
-                <li class="text">Eine stabile Internetverbindung</li>
-                <li class="text">
+            <div class="line">
+                <img
+                    alt="self-Logo"
+                    src={Checkmark}
+                    width="30px"
+                    height="auto"
+                />
+                <p>
+                    Eine stabile Internetverbindung
+                </p>
+            </div>
+            <div class="line">
+                <img
+                    alt="self-Logo"
+                    src={Checkmark}
+                    width="30px"
+                    height="auto"
+                />
+                <p>
                     Einen Laptop, ein Tablet oder Smartphone mit einer Webcam,
                     Mikrofon und Lautsprechern <br>(Hierbei sollten Tablet oder
                     Smartphone fest installiert sein, damit Sie Ihre Hände frei
                     haben)
-                </li>
-                <li class="text">
+                </p>
+            </div>
+            <div class="line">
+                <img
+                    alt="self-Logo"
+                    src={Checkmark}
+                    width="30px"
+                    height="auto"
+                />
+                <p>
                     Einen Raum oder Ort mit einem bequemen Stuhl, einer Couch
                     oder Sessel
-                </li>
-                <li class="text">
+                </p>
+            </div>
+            <div class="line">
+                <img
+                    alt="self-Logo"
+                    src={Checkmark}
+                    width="30px"
+                    height="auto"
+                />
+                <p>
                     Die Umgebung sollte entsprechend ruhig sein und ihre
-                    Privatsphäre gewahrt
-                </li>
-            </ul>
+                Privatsphäre gewahrt
+                </p>
+            </div>
+            <div class="welcome-text">
+ 
+            </div>
         </div>
         <div class="cell contact">
             <p>
@@ -143,7 +179,7 @@
         h4{
             margin-top: 1rem;
         }
-        padding: 0 1rem;
+        padding: var(--content-padding, 0 1rem);
         h2 {
             text-align: center;
         }

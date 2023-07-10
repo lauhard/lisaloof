@@ -17,6 +17,28 @@
     <div class="grid">
         <div class="cell hero">
             <div class="image-wrapper">
+                <div class="one">
+                    <img
+                        class="ll1"
+                        src={Uebermich1}
+                        alt=""
+                        srcset=""
+                        width="100%"
+                        height="300px"
+                    />
+                </div>
+                <div class="two">
+                    <img
+                        class="ll2"
+                        src={Uebermich2}
+                        alt=""
+                        srcset=""
+                        width="100%"
+                        height="300px"
+                    />
+                </div>
+            </div>
+            <div class="mobile-image-wrapper">
                 <img
                     class="ll1"
                     src={Uebermich1}
@@ -25,27 +47,18 @@
                     width="100%"
                     height="300px"
                 />
-                <img
-                    class="ll2"
-                    src={Uebermich2}
-                    alt=""
-                    srcset=""
-                    width="100%"
-                    height="300px"
-                />
             </div>
-
             <h2>Über Mich</h2>
         </div>
         <div class="cell about-me">
-            <h2 class="content-headline" >Herzlich Willkommen</h2>
+            <h2 class="content-headline">Herzlich Willkommen</h2>
             <p>
                 Ich freue mich sehr über Ihr Interesse und begrüße Sie auf
                 meiner Homepage. Mein Name ist Lisa-Marie Loof, ich bin
                 diplomierte Hypnosetrainerin und habe 2020 meinen Bachelor of
                 Science in Psychologie erlangt.
             </p>
-            <br>
+            <br />
             <p>
                 Destruktive Muster und Gewohnheiten, die vor dem Bewussten
                 verborgen sind und sich trotzdem auf das Leben im Jetzt
@@ -53,7 +66,7 @@
                 aus meinem Psychologiestudium und meine Ausbildung zur
                 diplomierten Hypnosetrainerin waren somit ein „Perfect Match“.
             </p>
-            <br>
+            <br />
             <!-- <ul>
                 <li class="text">das Unterbewusstsein</li>
                 <li class="text">Persönlichkeitsentwicklung</li>
@@ -75,11 +88,11 @@
             <h2 class="content-headline">Mein Hypnose-Konzept</h2>
             <p>
                 Ich habe mich auf bestimmte Fragen und Themengebiete sowie deren
-                Bearbeitung (zum Beispiel Raucherentwöhnung) spezialisiert. Meine
-                Hypnosearbeit umfasst in der Regel mehrere Schritte, beginnend
-                mit einer Vorarbeit zur Seelenreinigung, gefolgt von der
-                Festigung durch das Setzen von Ankern und die Verankerung der
-                Selbsthypnose. Aus diesem Grund finden meine Sitzungen stets
+                Bearbeitung (zum Beispiel Raucherentwöhnung) spezialisiert.
+                Meine Hypnosearbeit umfasst in der Regel mehrere Schritte,
+                beginnend mit einer Vorarbeit zur Seelenreinigung, gefolgt von
+                der Festigung durch das Setzen von Ankern und die Verankerung
+                der Selbsthypnose. Aus diesem Grund finden meine Sitzungen stets
                 in mindestens zwei Einheiten statt.
             </p>
             <br />
@@ -113,17 +126,24 @@
             <div class="article">
                 <h4>Wichtiger Hinweis</h4>
                 <p>
-                    Bei der hier angebotenen Hypnose handelt es sich um KEINE therapeutische Hypnose. Das bedeutet, meine Dienste ersetzen keinesfalls die eines Arztes oder Psychotherapeuten. Ich handle nicht außerhalb meines Tätigkeitsbereiches, ich betreibe keine Diagnostik, verschreibe keine Medikamente, gebe keine Versprechen jeglicher Art ab oder behandle medizinische oder psychische Leiden. Falls Sie an entsprechenden Erkrankungen leiden, wenden Sie sich bitte an die zuständigen Fachärzte*innen. 
+                    Bei der hier angebotenen Hypnose handelt es sich um KEINE
+                    therapeutische Hypnose. Das bedeutet, meine Dienste ersetzen
+                    keinesfalls die eines Arztes oder Psychotherapeuten. Ich
+                    handle nicht außerhalb meines Tätigkeitsbereiches, ich
+                    betreibe keine Diagnostik, verschreibe keine Medikamente,
+                    gebe keine Versprechen jeglicher Art ab oder behandle
+                    medizinische oder psychische Leiden. Falls Sie an
+                    entsprechenden Erkrankungen leiden, wenden Sie sich bitte an
+                    die zuständigen Fachärzte*innen.
                 </p>
                 <p>
-                    Falls ich die Hypnosesitzung aufgrund oben genannter Gründe für nicht sinnvoll erachte, behalte ich mir das Recht vor, die Sitzung abzulehnen.  
+                    Falls ich die Hypnosesitzung aufgrund oben genannter Gründe
+                    für nicht sinnvoll erachte, behalte ich mir das Recht vor,
+                    die Sitzung abzulehnen.
                 </p>
-                <p>
-                    Umsatzsteuerbefreit gemäß § 6 Abs. 1 Z 19 UstG
-                </p>
+                <p>Umsatzsteuerbefreit gemäß § 6 Abs. 1 Z 19 UstG</p>
             </div>
         </div>
-      
     </div>
 </div>
 
@@ -175,6 +195,25 @@
             display: flex;
             flex-direction: row;
             height: 100%;
+            width: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                overflow: hidden;
+            }
+            .one {
+                min-width: 50%;
+                width: 50%;
+                min-height: 100%;
+            }
+            .two {
+                width: 50%;
+                height: 100%;
+                .ll2 {
+                    object-fit: cover;
+                }
+            }
         }
         h2 {
             position: absolute;
@@ -191,16 +230,6 @@
 
             left: 50%;
             transform: translateX(-50%);
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            overflow: hidden;
-        }
-        .ll2 {
-            object-fit: cover;
-            height: 100%;
         }
     }
     .about-me {
@@ -222,7 +251,7 @@
         }
     }
     .concept {
-        padding: 0 1rem;
+        padding: var(--content-padding, 0 1rem);
         .content-headline {
             text-align: center;
             margin-bottom: 0.5rem;
@@ -231,11 +260,11 @@
         justify-self: center;
         margin-bottom: 2rem;
     }
-    .important{
+    .important {
         max-width: var(--content-width);
         justify-self: center;
         margin-bottom: 2rem;
-        .article{
+        .article {
             // max-width: 60%;
             min-width: 300px;
             width: 100%;
@@ -243,15 +272,14 @@
             padding: 1rem 1.5rem;
             background-color: var(--primary-hover);
             // border-radius: 5px;
-            h4{
+            h4 {
                 text-align: center;
                 margin-bottom: 0.5rem;
             }
-            p{
+            p {
                 // width: 80%;
                 margin: 0 auto;
             }
-        
         }
     }
     .certificates {
@@ -271,6 +299,59 @@
             object-position: center;
             overflow: hidden;
             justify-self: center;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .image-wrapper {
+            display: flex;
+            width: 100% !important;
+            height: 100%;
+            // justify-content: center;
+            .one {
+                margin-right: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    // object-position: 0px 0px;
+                    object-position: center;
+                    overflow: hidden;
+                }
+            }
+
+            // display: none !important;
+        }
+
+        @media (orientation: landscape) {
+        }
+    }
+    @media screen and (max-width: 650px) {
+        .image-wrapper {
+            // .ll1 {
+            //     width: 100%;
+            //     height: 100%;
+            //     object-fit: cover;
+            //     overflow: hidden;
+            // }
+            // .ll2 {
+
+            // }
+            display: none !important;
+        }
+        .mobile-image-wrapper {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 0px 0px;
+                object-position: center;
+                overflow: hidden;
+            }
+        }
+
+        @media (orientation: landscape) {
         }
     }
 </style>
