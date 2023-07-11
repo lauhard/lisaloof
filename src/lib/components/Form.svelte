@@ -4,7 +4,7 @@
     import { createEventDispatcher } from 'svelte';
     export let action="";
     const dispatch = createEventDispatcher();
-    export let myForm:HTMLFormElement = null;
+    export let myForm:HTMLFormElement;
 //    console.log("action:", action)
 </script>
 <div class="form-wrapper">
@@ -21,7 +21,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
         form{
             min-width: var(--form-min-width, auto);
             max-width: var(--form-max-width, auto);

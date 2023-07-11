@@ -3,6 +3,10 @@
 
 <svelte:head>
     <title>Impressum</title>
+    <meta 
+        name="description" 
+        content="Impressum Lisaloof.com" 
+    />
 </svelte:head>
 
 <div class="section">
@@ -117,12 +121,5 @@
     .owner {
         max-width: var(--content-width);
         justify-self: center;
-    }
-    .legal-note1,
-    .legal-note2 {
-        max-width: var(--content-width);
-        justify-self: center;
-        // background-color: red;
-        background-color: red;
     }
 </style>

@@ -9,6 +9,10 @@
     <link rel="preload" as="image" href={Cert} />
     <link rel="preload" as="image" href={Cert2} />
     <link rel="preload" as="image" href={Uebermich} />
+    <meta 
+        name="description" 
+        content="Lisa Marie Loof BSc, diplomierte Hypnosetrainerin und Psychologin aus Klagenfurt" 
+    />
 </svelte:head>
 
 <div class="section">
@@ -122,21 +126,6 @@
 </div>
 
 <style lang="scss">
-    .section {
-        --section-min-height: 100vh;
-        --section-height: 100%;
-        --section-width: 100%;
-        --section-margin: 90px 0 0 0;
-        --section-padding: 0 0 0 0;
-        // --bg-section: rgb(0, 26, 255);
-        height: var(--section-height);
-        min-height: var(--section-min-height);
-        width: var(--section-width);
-        margin: var(--section-margin);
-        padding: var(--section-padding);
-        background-color: var(--bg-section);
-        position: relative;
-    }
     .grid {
         --grid-row-gap: 2rem;
 
@@ -198,14 +187,6 @@
         }
         max-width: var(--content-width);
         justify-self: center;
-        ul {
-            margin-top: 1rem;
-            padding-left: 1rem;
-            li {
-                list-style-type: circle;
-                font-weight: 400;
-            }
-        }
     }
     .concept {
         padding: var(--content-padding, 0 1rem);

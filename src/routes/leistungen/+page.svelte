@@ -15,6 +15,10 @@
     <link rel="preload" as="image" href={Selbstwert} />
     <link rel="preload" as="image" href={Tiefenentspannung} />
     <link rel="preload" as="image" href={Leistungen} />
+    <meta 
+        name="description" 
+        content="Raucherentwöhnung, Selbstwert oder Reinkarnation, egal welches Thema Sie angehen möchten, ich arbeite mit Ihnen und einem individuellen Hypnose Konzept." 
+    />
 </svelte:head>
 
 <section class="section">
@@ -31,7 +35,7 @@
         </div>
         <div class="cell content">
             <!-- <h2 class="content-headline">Meine Leistungen</h2> -->
-            <p>
+            <p class="text">
                 Im folgenden Abschnitt nenne ich einige Beispiele für
                 Anwendungsbereiche von Hypnose. Es ist jedoch wichtig zu
                 beachten, dass Hypnosearbeit auch für andere Themengebiete
@@ -40,11 +44,10 @@
                 Regression oder Reinkarnation haben, biete ich ebenfalls die
                 Möglichkeit einer Zusammenarbeit an.
             </p>
-            <br />
-            <p>
+            <p class="text">
                 <strong>Meine Pakete sind folgendermaßen aufgebaut:</strong>
             </p>
-            <p>
+            <p class="text">
                 Die erste Einheit beinhaltet ein kostenloses und unverbindliches
                 Vorgespräch. Hierbei möchte ich mir ein Bild von Ihren
                 Erwartungen oder bereits vorhandenen Hypnose-Erfahrungen machen.
@@ -53,19 +56,16 @@
                 mir Ihr Vertrauen zu schenken, stellen wir die Weichen, um
                 gemeinsam an Ihrem Thema zu arbeiten.
             </p>
-            <br />
-            <p>
+            <p class="text">
                 In der zweiten Einheit können Gedanken und Gefühle, welche
                 nachträglich aufgekommen sind besprochen werden. Wir arbeiten
                 intensiv lösungs- und ressourcenorientiert an Ihrem Thema.
             </p>
-            <br />
-            <p>
+            <p class="text">
                 In der dritten Einheit (optional) möchte ich Ihnen anbieten, die
                 Selbsthypnose bei Ihnen zu verankern, sodass Sie die Möglichkeit
                 haben, auch selbst in Hypnose zu gehen und zu arbeiten.
             </p>
-            <br />
             <div class="wrapper-services">
                 <div class="service rauchfrei">
                     <h3>Raucherentwöhnung</h3>
@@ -278,10 +278,6 @@
 
     .content {
         padding: var(--content-padding, 0 1rem);
-        .content-headline {
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
         max-width: var(--content-width, 1240px);
         justify-self: center;
         box-sizing: border-box;
@@ -292,6 +288,12 @@
         min-height: 100vh;
         height: 100%;
         width: 100%;
+        .text{
+            margin-bottom: 1rem;
+        }
+        p.text:nth-of-type(2){
+            margin-bottom: 0;
+        }
         .service-image {
             width: 50%;
             max-width: 400px;

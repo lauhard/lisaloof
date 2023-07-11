@@ -5,6 +5,10 @@
 
 <svelte:head>
     <title>Online Hypnose</title>
+    <meta 
+        name="description" 
+        content="Nutzen sie Ihre Zeit der Hypnose und Weiterentwicklung, um an ihren Themen zu arbeiten und daran zu wachsen." 
+    />
     <link rel="preload" as="image" href={OnlineHypnose} />
 </svelte:head>
 
@@ -96,33 +100,12 @@
                 Falls Sie weitere Fragen haben sollten, melden Sie sich gerne
                 persönlich bei mir.
             </p>
-            <!-- <img
-                src={cert}
-                alt="zertifikat-1"
-                srcset=""
-                width="100%"
-                height="300px"
-            /> -->
         </div>
     </div>
 </div>
 
 <style lang="scss">
-    .section {
-        --section-min-height: 100vh;
-        --section-height: 100%;
-        --section-width: 100%;
-        --section-margin: 90px 0 0 0;
-        --section-padding: 0 0 0 0;
-        // --bg-section: rgb(0, 26, 255);
-        height: var(--section-height);
-        min-height: var(--section-min-height);
-        width: var(--section-width);
-        margin: var(--section-margin);
-        padding: var(--section-padding);
-        background-color: var(--bg-section);
-        position: relative;
-    }
+    
     .grid {
         --grid-row-gap: 2rem;
 
@@ -180,20 +163,9 @@
             margin-top: 1rem;
         }
         padding: var(--content-padding, 0 1rem);
-        h2 {
-            text-align: center;
-        }
+       
         max-width: var(--content-width);
         justify-self: center;
-        // background-color: red;
-        ul {
-            margin-top: 1rem;
-            padding-left: 1rem;
-            li {
-                list-style-type: circle;
-                font-weight: 400;
-            }
-        }
     }
     .contact {
         max-width: var(--content-width);
@@ -203,15 +175,5 @@
         grid-template-columns: repeat(auto-fit, minmax(320px, 30%));
         grid-template-rows: minmax();
         justify-content: center;
-        // img {
-        //     width: 30%;
-        //     min-width: 320px;
-        //     height: auto;
-        //     object-fit: cover;
-        //     object-position: 0px -80px;
-        //     object-position: center;
-        //     overflow: hidden;
-        //     justify-self: center;
-        // }
     }
 </style>

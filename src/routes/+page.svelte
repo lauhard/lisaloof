@@ -40,6 +40,10 @@
 
 <svelte:head>
     <title>Startseite</title>
+    <meta 
+        name="description" 
+        content="Nutzen sie Ihre Zeit der Hypnose und Weiterentwicklung, um an ihren Themen zu arbeiten und daran zu wachsen." 
+    />
     <link rel="preload" as="image" href={ProfileImage} />
 </svelte:head>
 

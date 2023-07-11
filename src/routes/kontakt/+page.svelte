@@ -8,7 +8,6 @@
     import { toast } from '@zerodevx/svelte-toast'
 
     export let form: ActionData;
-    export let data: PageServerData;
 
 
     let action = "add";
@@ -38,14 +37,18 @@
 
 <svelte:head>
     <title>Kontakt</title>
+    <meta 
+        name="description" 
+        content="" 
+    />
 </svelte:head>
 
 <section class="section">
-    <div class="grid">
+    <div class="content">
          <div class="cell contact-form">
              <h2 class="decorator">Terminanfrage</h2>
-             <p>
-                 Schicken Sie eine unverbindliche Anfrage für Ihr kostenloses Erstgespräch oder einen Termin.
+             <p class="information">
+                 <strong>Schicken Sie eine unverbindliche Anfrage für Ihr kostenloses Erstgespräch oder einen Termin.</strong>
              </p>
              <Form bind:myForm on:formaction={formActionResult} --form-width="100%" action="{action}">
                  <div class="block">
@@ -79,7 +82,7 @@
                          <Checkbox id="contact_callback" labelText="Bitte um Rückruf"></Checkbox>
                      </label>
                  </div>
-                 <button class="" type="submit">Abschicken</button>
+                 <button class="" type="submit"><strong>Abschicken</strong></button>
                  {#if form?.prismaError}
                      <FormError error={form?.prismaError} />
                  {/if}
@@ -89,21 +92,9 @@
 </section>
 
 <style lang="scss">
-    .grid {
-        --grid-row-gap: 2rem;
-
-        background-color: var(--bg-grid);
-        min-height: var(--grid-min-height);
-        height: var(--grid-height);
-        width: var(--grid-width);
-
-        grid-gap: var(--grid-gap, 0px);
-        grid-row-gap: var(--grid-row-gap, 0px);
-        grid-template-columns: var(--grid-columns-desktop);
-        grid-template-rows: var(--grid-rows-desktop);
-
-        box-sizing: border-box;
-        overflow: hidden;
+    .content {
+        max-width: var(--content-width);
+        margin: 0 auto;
     }
     .cell {
         background-color: var(--bg-grid-cell, transparent);
@@ -119,9 +110,13 @@
         margin-top: 3rem;
         justify-self: center;
         padding: 0 2rem;
-        max-width: 50%;
-        :global(.block){
-            // min-width: 300px;
+        .information{
+            padding: .8rem;
+            background-color: var(--primary);
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            // display: inline-block;
         }
         h2{
             text-align:  center;
@@ -129,12 +124,6 @@
         }
         .block{
             margin-top: 2rem;
-            
-        }
-        .cta{
-            margin: 0 auto;
-            width: 100%;
-            font-size: .9rem;
         }
         button {
             font-weight: 300;

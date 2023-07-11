@@ -2,7 +2,11 @@
 </script>
 
 <svelte:head>
-    <title>Datenschutz</title>
+    <title>Datenschutzerkl√§rung</title>
+    <meta 
+        name="description" 
+        content="Datenschutzerkl√§rung Lisaloof.com" 
+    />
 </svelte:head>
 
 <div class="section">
@@ -639,21 +643,6 @@ Zu welchem Zweck und in welchem Umfang Daten von dem Anbieter erhoben werden, k√
 </div>
 
 <style lang="scss">
-    .section {
-        --section-min-height: 100vh;
-        --section-height: 100%;
-        --section-width: 100%;
-        --section-margin: 90px 0 0 0;
-        --section-padding: 0 0 0 0;
-        // --bg-section: rgb(0, 26, 255);
-        height: var(--section-height);
-        min-height: var(--section-min-height);
-        width: var(--section-width);
-        margin: var(--section-margin);
-        padding: var(--section-padding);
-        background-color: var(--bg-section);
-        position: relative;
-    }
     h2 {
         text-align: center;
         margin: 2rem;
@@ -695,31 +684,7 @@ Zu welchem Zweck und in welchem Umfang Daten von dem Anbieter erhoben werden, k√
         }
     }
     .datenschutz {
-        
         max-width: var(--content-width);
         justify-self: center;
-        // background-color: red;
-        
-        
-    }
-   
-    .contact {
-        max-width: var(--content-width);
-        justify-self: center;
-        min-height: 300px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 30%));
-        grid-template-rows: minmax();
-        justify-content: center;
-        // img {
-        //     width: 30%;
-        //     min-width: 320px;
-        //     height: auto;
-        //     object-fit: cover;
-        //     object-position: 0px -80px;
-        //     object-position: center;
-        //     overflow: hidden;
-        //     justify-self: center;
-        // }
     }
 </style>
