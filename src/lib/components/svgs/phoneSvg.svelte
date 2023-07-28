@@ -55,7 +55,6 @@
     
    .base {
         color:var(--fill);
-
    }
  
        

@@ -2,6 +2,7 @@
 
     export let id:string = "dropdown";
     export let required=true;
+    export let tabindex=1;
     export let options=[
         {
             id:1,
@@ -35,7 +36,7 @@
         }
     ]
 </script>
-<select id={id} {required} on:change name={id}>
+<select id={id} {required} {tabindex} on:change name={id}>
     <option value="" selected hidden></option>
     {#each options as option}
         <option  value="{option.key}" >{option.value}</option>

@@ -15,10 +15,8 @@
     </div>
     <div class="brand-wrapper">
         <small>Dipl. Hypnosetrainerin</small>
-        <div class="brand-name">
-            <h1>Lisa-Marie Loof</h1>
-        </div>
-        <small>B.Sc in Psychologie</small>
+        <span class="brand-name">Lisa-Marie Loof</span>
+        <small>B.Sc. in Psychologie</small>
     </div>
 </a>
 
@@ -30,12 +28,12 @@
     }
     .logo-wrapper {
         min-width: 15rem;
-        // width: 22rem;
         display: flex;
         flex-direction: row;
         vertical-align: center;
         align-items: center;
         color: var(--text);
+        background-color: #fff;
     }
     .circle {
         min-width: 70px;
@@ -48,8 +46,6 @@
         justify-content: center;
         align-items: center;
         outline: none;
-        
-        // border: 1px solid white;
     }
     .brand-wrapper {
         display: flex;
@@ -65,17 +61,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 5px;
+            padding: 0 auto;
             background-color: white;
             margin: 2px 0;
-            h1 {
-                font-size: 16px;
-                color: var(--primary);
-                margin: 0;
-                padding: 0;
-                line-height: 1;
-                letter-spacing: 1px;
-            }
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: var(--primary);
         }
         small {
             padding: 0;
@@ -83,7 +74,7 @@
             margin-left: 1px;
             line-height: 1.4;
             font-size: 10px;
-            letter-spacing: 1.8px;
+            letter-spacing: 2px;
             color: var(--text);
         }
     }

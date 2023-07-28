@@ -1,5 +1,6 @@
 <script lang="ts">
     import LogoSvg from "./svgs/LogoSvg.svelte";
+    import instagram from "$lib/svg/instagram.svg";
 </script>
 
 <footer>
@@ -7,27 +8,29 @@
         <div class="cell logo">
             <div class="svg-wrapper">
                 <LogoSvg
-                    className="footer-background-svg"
+                    classNames="footer-background-svg"
                     animation={true}
                     --svg-stroke-width="0px"
+                    --leaves-main=var(--attention)
+                    --leaves-overlay=var(--primary)
                 />
             </div>
         </div>
         <div class="cell contact">
-            <div class="address-wrapper">
+            <address class="address-wrapper">
                 <h5>Kontakt</h5>
                 <p>Lisa-Marie Loof</p>
                 <p>Waagplatz 1</p>
                 <p>9020 Klagenfurt</p>
                 <p>Österreich</p>
-            </div>
+            </address>
             <div class="contact-wrapper ">
                 <ul>
                     <li>
-                       <a class="text" href="tel:+4367761750953">Tel: +43 (0) 67761750953</a>
+                       <a class="show-link" href="tel:+4367761750953">Tel: +43 (0) 67761750953</a>
                     </li>
                     <li>
-                        <a class="text" href="mailto:praxis@lisaloof.at">Mail: praxis@lisaloof.at</a>
+                        <a class="show-link" href="mailto:praxis@lisaloof.at">Mail: praxis@lisaloof.at</a>
                     </li>
                 </ul>
             </div>
@@ -37,19 +40,26 @@
                 <h5>Links</h5>
                 <ul>
                     <li>
-                        <a class="text" href="/">Startseite</a>
+                        <a class="show-link" href="/">Startseite</a>
                     </li>
                     <li>
-                        <a class="text" href="/ueber-mich">Über mich</a>
+                        <a class="show-link" href="/ueber-mich">Über mich</a>
                     </li>
                     <li>
-                        <a class="text" href="/leistungen">Leistungen</a>
+                        <a class="show-link" href="/hypnose-klagenfurt">Leistungen</a>
                     </li>
                     <li>
-                        <a class="text" href="/onlinehypnose">Online-Hypnose</a>
+                        <a class="show-link" href="/onlinehypnose">Online-Hypnose</a>
                     </li>
                     <li>
-                        <a class="text" href="/kontakt">Kontakt</a>
+                        <a class="show-link" href="/kontakt">Kontakt</a>
+                    </li>
+                    <li>
+                        <a class="insta-button " role="button" href="https://www.instagram.com/hypnose_loof/" target="_blank">
+                            <img src="{instagram}" alt="">
+                            <p class="show-link">Instagram</p>
+                        </a>
+                       
                     </li>
                 </ul>
             </div>
@@ -59,15 +69,16 @@
                 <h5>Rechtliches</h5>
                 <ul>
                     <li>
-                        <a class="text" href="/impressum">Impressum</a>
+                        <a class="show-link" href="/impressum">Impressum</a>
                     </li>
                     <li>
-                        <a class="text" href="/datenschutz">Datenschutz</a>
+                        <a class="show-link" href="/datenschutz">Datenschutz</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+    
 </footer>
 
 <style lang="scss">
@@ -93,6 +104,18 @@
             box-sizing: border-box;
             z-index: 0;
         }
+        .insta-button {
+            position: relative;
+            background-color: transparent;
+            border: none !important;
+            margin-top:10px;
+            text-decoration: none !important;
+            border: none !important;
+            outline: none !important;
+            img{
+                height: 2rem;
+            }
+        }
     }
 
     .cell {
@@ -106,33 +129,39 @@
         z-index: 10;
         li {
             margin: 0;
-            padding: 0;
+            padding: .1rem 0;
             list-style: none;
-            font-size: 16px;
-
         }
         a,
         p {
             color: #fff;
-            font-size: 16px;
-
+            padding: .1rem 0;
+            font-size: 17px;
         }
         a:hover{
             color:var(--primary);
         }
+        .show-link {
+            text-decoration-color:#fff !important;
+          
+            &:hover {
+                color:var(--primary) !important;
+                text-decoration-color:var(--primary) !important;
+            }
+           
+        }
         h5 {
-            color: #378d93;
             color: var(--secondary);
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
             margin-top: 10px;
             padding: 0px;
             line-height: 1;
+            font-size: 23px;
             &:after {
                 content: "";
                 display: block;
-                width: 4rem;
+                width: 2.5rem;
                 height: 1px;
-                background-color: #378d93;
                 background-color: var(--secondary);
                 margin-top: 5px;
             }
@@ -171,7 +200,7 @@
         h5 {
             &:after {
                 content: "";
-                width: 2.7rem;
+                width: 1.6rem;
             }
         }
         .sitemap-wrapper {
@@ -183,7 +212,7 @@
         h5 {
             &:after {
                 content: "";
-                width: 6rem;
+                width: 4rem;
             }
         }
     }
@@ -198,17 +227,15 @@
                     grid-column: span auto;
                     grid-row: span auto;
                     right:-70%;
+                    top:10%;
                     height: 100%;
                     justify-content: center;
                     align-items: center;
                     justify-self: center;
                     align-self: center;
                     .svg-wrapper {
-                        // position: absolute;
                         height: 80%;
-                        // bottom: 10px;
                         width: 100%;
-                        // max-width: 100%;
                         :global(.footer-background-svg) {
                             position: relative;
                             height: 100%;
@@ -233,18 +260,13 @@
                     grid-column: span auto;
                     grid-row: span auto;
                     height: 100%;
+
                     .svg-wrapper {
-                        // position: absolute;
-                        // bottom: 0px;
                         right:2%;
-                        // height: 100%;
                         width: 100%;
                         max-width: 100%;
                         :global(.footer-background-svg) {
                             position: relative;
-                            // height: 100%;
-                            // width: 100%;
-                            // max-width: 100%;
                         }
                     }
                 }

@@ -2,18 +2,18 @@
     export let classNames = "";
 </script>
 
-<header class="heading {classNames}">
-    <h1 class="wrapper">
+<div class="page-slogan {classNames}">
+    <span class="slogan-wrapper">
         <span class="line-1">Ihre Zeit</span>
         <span class="line-2">für <span class="hypnose">Hypnose</span> &</span>
         <span class="line-3">Weiterentwicklung</span>
         <!-- <span class="subheading">Entdecken Sie die Kraft von Hypnose</span> 
         <div class="separator" /> -->
-    </h1>
-</header>
+    </span>
+</div>
 
 <style lang="scss">
-    .heading {
+    .page-slogan {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -25,7 +25,7 @@
         white-space: nowrap;
         border: 5px solid white;
     }
-    .wrapper {
+    .slogan-wrapper {
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
@@ -69,10 +69,10 @@
         border-radius: 5px;
     }
     @media screen and (max-width: 420px) {
-        .heading {
+        .page-slogan {
             width: auto;
             margin: 0;
-            .wrapper {
+            .slogan-wrapper {
                 margin: 0;
                 width: 100%;
                 span {

@@ -1,11 +1,21 @@
 <script lang="ts">
+    //------------------------internal-------------------------------------------
+    import { page } from "$app/stores";
+    import { onMount } from "svelte";
+    import { SliceZone } from "@prismicio/svelte";
+    import { PUBLIC_CANONICAL_URL } from "$env/static/public";
+
+    //-------------------------types--------------------------------------------
+    import type { PrismicDocument } from "@prismicio/client";
+    import type { PageServerData } from "./$types";
+
+    //-------------------------components----------------------------------------
+    import { showPopup } from "$lib/stores/popup";
     import LogoSvg from "$lib/components/svgs/LogoSvg.svelte";
     import RoundButton from "$lib/components/RoundButton.svelte";
     import ArrowDownSvg from "$lib/components/svgs/ArrowDownSvg.svelte";
-    import { onMount } from "svelte";
-    import { SliceZone } from "@prismicio/svelte";
     import Popup from "$lib/components/slices/Popup.svelte";
-    import Headline from "$lib/components/Headline.svelte";
+    import Slogan from "$lib/components/Slogan.svelte";
     import Information from "$lib/components/Information.svelte";
     import ProfileImage from "$lib/images/lisa-min.webp";
     import Checkmark from "$lib/svg/checkmark.svg";
@@ -15,42 +25,53 @@
     import Praxis1 from "$lib/images/praxis1.webp";
     import Praxis2 from "$lib/images/praxis2.webp";
     import Hypnose from "$lib/images/was-ist-hypnose.webp";
-
-    import type { PrismicDocument } from "@prismicio/client";
-    import type { PageServerData } from "./$types";
     import Faq from "$lib/components/FAQ.svelte";
-    import { showPopup } from "$lib/stores/popup";
+    import { scrollToAnchor } from "$lib/utils";
 
+    //-------------------------exports----------------------------------------
     export let data: PageServerData;
     export let document: PrismicDocument = data?.document as PrismicDocument;
-    export let cookieState: string = data?.popup ==  undefined ? "accepted" : data?.popup;
+    export let cookieState: string =
+        data?.popup == undefined ? "accepted" : data?.popup;
+
+    //search for popup slice in prismicio document
     const popup = document.data.body.filter(
         (s: { slice_type: string }) => s.slice_type == "popup"
     );
 
-    // $: showPopup = false;
     $: popupState = false;
 
+    //check for popup state in store and set it to local variable
     onMount(async () => {
-        if( $showPopup != undefined) {
+        if ($showPopup != undefined) {
             popupState = $showPopup;
         }
     });
+    console.log("canonical url: ", PUBLIC_CANONICAL_URL);
 </script>
 
+<!-- 
+    SEO optimization
+    meta tags
+    canonical url
+ -->
 <svelte:head>
-    <title>Startseite</title>
-    <meta 
-        name="description" 
-        content="Nutzen sie Ihre Zeit der Hypnose und Weiterentwicklung, um an ihren Themen zu arbeiten und daran zu wachsen." 
+    <title
+        >Lisa Marie Loof B.Sc. - Zeit für Hypnose und Weiterentwicklung in
+        Klagenfurt</title
+    >
+    <meta
+        name="description"
+        content="Ihre Zeit der Hypnose und Weiterentwicklung, besuchen Sie mich in meinem Praxisraum in Klagenfunrt am Waaagplatz 1."
     />
+    <link rel="canonical" href="{PUBLIC_CANONICAL_URL}" />
     <link rel="preload" as="image" href={ProfileImage} />
 </svelte:head>
 
 <div class="background-svg-banner">
     <div class="svg-wrapper">
         <LogoSvg
-            className="background-svg"
+            classNames="background-svg"
             height="80vh"
             animation={false}
             --leaves-main="#f0f0f035"
@@ -62,27 +83,31 @@
     </div>
 </div>
 
-<div class="section">
+<section class="section">
     {#if popupState && cookieState == "accepted"}
-        <!-- content here -->
-        <SliceZone slices={popup} components={{"popup":Popup}} />
+        <SliceZone slices={popup} components={{ popup: Popup }} />
     {/if}
     <RoundButton
         classNames="hover scroll-down"
-        title="scroll to the next headline"
+        title="Zum nächsten Abschnitt scrollen"
+        on:action={(e) => {
+            scrollToAnchor({id:"Zei-für-Hypnose-und-Weiterentwicklung-in-Klagenfurt"})
+        }}
     >
-        <a
-            href="/#willkommen"
-            aria-label="links to section 2"
-            style="padding:0 10px;"
-        >
-            <ArrowDownSvg width="20px" height="30px" --fill="#fff" />
-        </a>
+        <ArrowDownSvg width="20px" height="30px" --fill="#fff" />
     </RoundButton>
+
+    <!-- <Submenu
+    show={true}
+    classNames="submenu-mobile"
+    --mobile-position="relative"
+/> -->
+
     <div class="grid">
+        
         <div class="cell cell-headline">
             <div class="headline-wrapper">
-                <Headline classNames="heading" />
+                <Slogan classNames="slogan" />
             </div>
             <div class="information-wrapper">
                 <Information classNames="information" />
@@ -93,70 +118,74 @@
                 <img
                     class="profile-image"
                     src={ProfileImage}
-                    alt=""
+                    alt="profile"
                     srcset=""
+                    width="100%"
+                    height="auto"
                 />
             </div>
         </div>
         <div class="cell cell-greeter">
+
             <div class="greeter-wrapper">
-                <span style="visibility:hidden;" id="willkommen" />
-                <h1 class="welcome">Herzlich Willkommen</h1>
-                <div class="welcome-text">
-                    <p class="intro">
-                        Während Ihrer Zeit für Hypnose und Weiterentwicklung
-                        soll Ihnen in gemeinsamer Zusammenarbeit Folgendes
-                        ermöglicht werden
+                <span
+                    style="visibility:hidden; display:block; width:100%;"
+                    id="Zei-für-Hypnose-und-Weiterentwicklung-in-Klagenfurt"
+                />
+                <span class="decorator-center">Herzlich Willkommen</span>
+                <h1 class="important-paragraph">
+                    Ihre Zeit für Hypnose und Weiterentwicklung in Klagenfurt
+                </h1>
+                <p class="important-paragraph">
+                    In gemeinsamer Zusammenarbeit wird es Ihnen ermöglicht
+                </p>
+                <div class="icon-line">
+                    <img
+                        alt="checkmark"
+                        src={Checkmark}
+                        width="30px"
+                        height="auto"
+                    />
+                    <p>
+                        Ihre ganz eigenen Erfahrungen mit Hypnose zu machen und
+                        diese zu erleben.
                     </p>
-                    <br />
-                    <div class="line">
-                        <img
-                            alt="self-Logo"
-                            src={Checkmark}
-                            width="30px"
-                            height="auto"
-                        />
-                        <p>
-                            Ihre ganz eigenen Erfahrungen mit Hypnose zu machen
-                            und diese zu erleben.
-                        </p>
-                    </div>
-                    <div class="line">
-                        <img
-                            alt="self-Logo"
-                            src={Checkmark}
-                            width="30px"
-                            height="auto"
-                        />
-                        <p>
-                            Ihren Themen, den entstehenden Gefühlen und Gedanken
-                            wird der Raum und die Zeit gegeben zu wirken.
-                        </p>
-                    </div>
-                    <div class="line">
-                        <img
-                            alt="self-Logo"
-                            src={Checkmark}
-                            width="30px"
-                            height="auto"
-                        />
-                        <p>
-                            Ihre eigenen Ressourcen und Selbstheilungskräfte zu
-                            mobilisieren, um an Ihren Themen zu arbeiten.
-                        </p>
-                    </div>
-                    <div class="line">
-                        <img
-                            alt="self-Logo"
-                            src={Checkmark}
-                            width="30px"
-                            height="auto"
-                        />
-                        <p>
-                            Unser gemeinsamer Fokus wird auf dem lösungs- und
-                            ressourcenorientierten Arbeiten liegen.
-                        </p>
-                    </div>
+                </div>
+                <div class="icon-line">
+                    <img
+                        alt="checkmark"
+                        src={Checkmark}
+                        width="30px"
+                        height="auto"
+                    />
+                    <p>
+                        Ihren Themen, den entstehenden Gefühlen und Gedanken
+                        wird der Raum und die Zeit gegeben zu wirken.
+                    </p>
+                </div>
+                <div class="icon-line">
+                    <img
+                        alt="checkmark"
+                        src={Checkmark}
+                        width="30px"
+                        height="auto"
+                    />
+                    <p>
+                        Ihre eigenen Ressourcen und Selbstheilungskräfte zu
+                        mobilisieren, um an Ihren Themen zu arbeiten.
+                    </p>
+                </div>
+                <div class="icon-line">
+                    <img
+                        alt="checkmark"
+                        src={Checkmark}
+                        width="30px"
+                        height="auto"
+                    />
+                    <p>
+                        Unser gemeinsamer Fokus wird auf dem lösungs- und
+                        ressourcenorientierten Arbeiten liegen.
+                    </p>
                 </div>
             </div>
         </div>
@@ -169,37 +198,62 @@
                     </p>
 
                     <div class="contact-buttons">
-                        <a class="cta" type="button" href="tel:+4367761750953">
-                            <PhoneSvg
-                                width="30px"
-                                height="22px"
-                                classNames="onHover"
-                                --fill="var(--white)"
-                            />
-                            +43 67761750953
+                        <a 
+                            class="cta" 
+                            type="button"
+                            title="Telefonnummer anrufen"
+                            aria-label="phone link"
+                            href="tel:+4367761750953">
+                                <PhoneSvg
+                                    width="30px"
+                                    height="22px"
+                                    classNames="onHover"
+                                    --fill="var(--white)"
+                                />
+                                +43 67761750953
                         </a>
-
-                        <a class="cta" type="button" href="/kontakt">
-                            <EmailSvg
-                                width="30px"
-                                height="22px"
-                                classNames="onHover"
-                                --fill="var(--white)"
-                            />
-                            Kontakformular
+                        <a 
+                            class="cta" 
+                            type="button"
+                            title="Kontaktformular öffnen"
+                            aria-label="navigate to contact"
+                            href="/kontakt">
+                                <EmailSvg
+                                    width="30px"
+                                    height="22px"
+                                    classNames="onHover"
+                                    --fill="var(--white)"
+                                />
+                                Kontakformular
                         </a>
                     </div>
                 </div>
                 <div class="subgrid-cell image">
-                    <img src={Praxis1} alt="" srcset="" />
+                    <div class="image-wrapper">
+                        <img
+                            src={Praxis1}
+                            alt="praxis-raum1"
+                            srcset=""
+                            width="auto"
+                            height="100%"
+                        />
+                    </div>
                 </div>
                 <div class="subgrid-cell image">
-                    <img src={Praxis2} alt="" srcset="" />
+                    <div class="image-wrapper">
+                        <img
+                            src={Praxis2}
+                            alt="praxis-raum2"
+                            srcset=""
+                            width="auto"
+                            height="100%"
+                        />
+                    </div>
                 </div>
                 <div class="subgrid-cell map">
                     <div class="address-wrapper">
                         <p>
-                            Meine Praxis befindet sich im Zentrum von
+                            Mein Praxisraum befindet sich im Zentrum von
                             Klagenfurt.
                         </p>
 
@@ -209,6 +263,9 @@
                                 href="https://goo.gl/maps/VhgjNbHZmWpUjEwR9"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                type="button"
+                                title="Karte öffnen"
+                                aria-label="navigate to contact"
                             >
                                 <MapSvg
                                     width="35px"
@@ -230,21 +287,26 @@
             <div class="hypnose-wrapper">
                 <h2 class="decorator">Was ist Hypnose?</h2>
                 <article class="hypnose">
-                    <div class="hypnose__image">
-                        <img src={Hypnose} alt="" srcset="" />
+                    <div class="imgage-wrapper hypnose__image">
+                        <img
+                            src={Hypnose}
+                            alt=""
+                            width="auto"
+                            height="100%"
+                            srcset=""
+                        />
                     </div>
                     <div class="hypnose__text">
-                        <p>
+                        <p  class="text text-margin-bottom">
                             Das menschliche Bewusstsein lässt sich ganz einfach
                             erklärt in zwei Bewusstseinsstadien unterteilen. Das
                             Bewusstsein und das Unterbewusstsein. Das
                             Bewusstsein ermöglicht uns das rationale Lösen von
-                            Aufgaben oder das Treffen Entscheidungen. Allerdings
+                            Aufgaben oder das Treffen von Entscheidungen. Allerdings
                             beträgt dieser bewusste Anteil nur ca. 10 % unserer
                             gesamt möglichen Leistungen.
                         </p>
-                        <br />
-                        <p>
+                        <p  class="text text-margin-bottom">
                             Das bedeutet im Umkehrschluss, dass ein Großteil
                             unseres Potenzials ungenutzt bleibt. Im Untergrund
                             wirkt es sich oft unbemerkt auf unser Bewusstsein
@@ -252,11 +314,10 @@
                             Bewusstseins in den Hintergrund, was ein Arbeiten
                             mit dem Unterbewusstsein ermöglicht. Dadurch
                             gelangen wir an Inhalte, die uns im Wachzustand
-                            nicht zur Verfügung stehen und können mit ihnen
+                            nicht zur Verfügung stehen und wir können mit ihnen
                             arbeiten. Innere Selbstheilungskräfte und unbewusste
                             Ressourcen werden dabei gestärkt.
                         </p>
-                        <br />
                         <p>
                             Vielen ist gar nicht bewusst, dass uns der
                             hypnotische Zustand nicht fremd ist. Wir erleben ihn
@@ -273,29 +334,17 @@
         </div>
         <div class="cell cell-faq">
             <div class="faq-wrapper">
-                <h2 class="decorator" id="haeufig-gestellte-fragen">
+                <h2 class="decorator-center" id="haeufig-gestellte-fragen">
                     Häufig gestellte Fragen
                 </h2>
                 <Faq classNames="faq" />
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <style lang="scss">
     .section {
-        // --section-min-height: 100vh;
-        // --section-height: 100%;
-        // --section-width: 100%;
-        // --section-margin: 90px 0 0 0;
-        // --section-padding: 0 0 0 0;
-        // height: var(--section-height);
-        // min-height: var(--section-min-height);
-        // width: var(--section-width);
-        // margin: var(--section-margin);
-        // padding: var(--section-padding);
-        // background-color: var(--bg-section);
-        // position: relative;
         :global(.scroll-down) {
             display: flex;
             position: absolute;
@@ -307,13 +356,11 @@
             border-radius: 50%;
             border: 1px solid white;
             left: calc(50% - 22.5px);
-            background: var(--secondary);
+            background: var(--primary);
             z-index: 10;
             &:hover {
-                background: var(--secondary-hover) !important;
-                :global(.base) {
-                    --fill: var(--attention);
-                }
+                background: var(--attention);
+               
             }
         }
     }
@@ -324,7 +371,7 @@
         position: absolute;
         bottom: 10vh;
         height: 100vh;
-        max-height: 64vh;
+        max-height: 100vh;
         min-height: 300px;
         .svg-wrapper {
             position: absolute;
@@ -414,7 +461,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 50%;
+        height: 100%;
         width: 100%;
     }
     .headline-wrapper {
@@ -422,10 +469,6 @@
         height: 33vh;
         height: 35vh;
         justify-content: end;
-    }
-    .information-wrapper {
-        height: 100%;
-        justify-content: center;
     }
     .profile-image-wrapper {
         position: absolute;
@@ -455,24 +498,17 @@
         width: 100%;
         height: auto;
         margin-top: -4rem;
-        padding: 0 1rem;
-        .welcome {
-            width: 100%;
+        padding: var(--content-padding, 0 1rem);
+        .important-paragraph {
             text-align: center;
-            margin-bottom: 10px;
-            color: var(--text);
+            color: var(--attention);
         }
-        .line {
+        p.important-paragraph {
+            margin-bottom: 1rem;
+        }
+        .icon-line {
+            max-width: 845px;
             margin: 0 auto;
-        }
-        .intro {
-            line-height: 1.9rem;
-            font-weight: 400;
-            font-family: var(--font-family, "Segoe UI");
-            color: var(--text);
-            font-size: 1.1rem;
-            font-size: 24px;
-            text-align: center;
         }
     }
     .subgrid-praxis {
@@ -495,10 +531,6 @@
             min-height: 300px;
             overflow: hidden;
             padding: 0 20px;
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
         }
         .contact {
             grid-column-start: 1;
@@ -516,6 +548,7 @@
             p {
                 font-weight: 500;
                 font-weight: 300;
+                font-weight: 400;
                 text-align: center;
                 color: #fff;
             }
@@ -524,11 +557,13 @@
                 a {
                     text-transform: uppercase;
                     justify-self: center;
-                    color: #fff;
+                    // color: #fff;
                     &:hover {
-                        color: var(--attention);
+                        // color: var(--attention);
+                        color: #fff;
                         :global(.onHover) {
-                            color: var(--attention);
+                            // color: var(--attention);
+                            color: #fff;
                             transition: all 0.2s ease-in-out !important;
                         }
                         transition: all 0.2s ease-in-out !important;
@@ -565,6 +600,9 @@
                     // margin-bottom: 30px;
                     font-weight: 500;
                     font-weight: 300;
+                    font-weight: 400;
+
+
                     text-align: center;
                     padding: 0px;
                     color: #fff;
@@ -583,11 +621,13 @@
                     a {
                         text-transform: uppercase;
                         justify-self: center;
-                        color: #fff;
+                        // color: #fff;
                         &:hover {
                             color: var(--attention);
+                            color: #fff;
                             :global(.onHover) {
                                 color: var(--attention);
+                                color: #fff;
                                 transition: all 0.2s ease-in-out !important;
                             }
                             transition: all 0.2s ease-in-out !important;
@@ -605,11 +645,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: var(--content-padding, 0 1rem);
         .decorator {
             margin-top: 1.5rem;
-        }
-        .decorator::before {
-            border-color: var(--secondary);
+            // margin-bottom: 0rem;
+            &::before {
+                border-color: var(--attention);
+            }
         }
         .hypnose {
             max-width: var(--content-width);
@@ -617,6 +659,7 @@
             background-color: transparent;
             box-shadow: none;
             padding: 0;
+            margin: 0 0 2rem 0;
             border-radius: 0px;
             display: flex;
             flex-direction: row;
@@ -646,17 +689,14 @@
         }
     }
     .faq-wrapper {
-        .decorator {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
         max-width: var(--content-width);
         width: 100%;
+        width: 100%;
         margin: 0 auto;
-        height: auto;
-        min-height: 440px;
-        display: flex;
-        flex-direction: column;
+        padding: var(--content-padding, 0 1rem);
+        // .decorator-center {
+        //     margin-bottom: 2rem;
+        // }
     }
     @media screen and (max-width: 1460px) {
         .grid {
@@ -803,16 +843,9 @@
                 margin-top: 50px;
                 padding: 0 20px;
                 box-sizing: border-box;
-                h2::before {
-                    background-color: var(--secondary);
-                    position: absolute;
-                    border-color: var(--secondary);
-                    border-style: solid;
-                }
             }
             .faq-wrapper {
-                margin-top: 50px;
-                padding: 0 20px;
+                margin-top: 1rem;
             }
         }
         @media (orientation: landscape) {
@@ -866,7 +899,7 @@
                 }
             }
             .hypnose {
-                display: block
+                display: block;
             }
         }
     }
@@ -938,6 +971,11 @@
             .headline-wrapper {
                 background-color: var(--primary);
             }
+            .greeter-wrapper{
+                p.important-paragraph {
+                    margin: 1.5rem 0;
+                }
+            }
             .hypnose-wrapper {
                 padding: 0 20px;
                 box-sizing: border-box;
@@ -945,8 +983,14 @@
                     max-width: 100%;
                     width: 100%;
                     max-height: 350px;
+                    min-height: 280px;
+                    min-width: 280px;
+                    border-radius: 1rem;
                     margin-right: 30px;
                 }
+            }
+            .subgrid-praxis > .contact > p {
+                margin-bottom: 20px;
             }
         }
     }
@@ -988,6 +1032,12 @@
             .subgrid-praxis {
                 grid-auto-rows: minmax(100px, 300px);
                 grid-row-gap: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                height: 100%;
             }
         }
     }

@@ -3,45 +3,49 @@
     export let classNames = "";
 </script>
 
-<header class="Information {classNames}">
-    <div class="wrapper">
+<article class="Information {classNames}">
+    <!-- <div class="wrapper"> -->
         <AlertSvg
-            svgClass="alert-svg"
-            pathClass="alert-path"
             width="50px"
             height="50px"
+            classNames="information-box"
+            --fill="white"
         />
         <div class="catchphrases">
             <p class="catchphrase">
-                Sie wollen aufhören zu <span class="attention">rauchen</span>?
+                <!-- Sie wollen aufhören zu <span class="attention">rauchen</span>? -->
+                Sie wollen aufhören zu <a class="show-link" href="/hypnose-klagenfurt/raucherentwoehnung" ><span class="attention">rauchen</span></a>?
             </p>
             <p class="catchphrase">
-                Sie kämpfen mit <span class="attention">Lampenfieber</span>
-                oder
-                <span class="attention">Prüfungssituationen</span>?
+                Sie kämpfen mit <a class="show-link" href="/hypnose-klagenfurt/entspannt-in-die-pruefung" ><span class="attention">Lampenfieber</span></a> oder
+                <a class="show-link" href="/hypnose-klagenfurt/entspannt-in-die-pruefung" ><span class="attention">Prüfungssituationen</span></a>?
             </p>
             <p class="catchphrase">
-                Sie verbringen zuviel Zeit am <span class="attention"
-                    >Smartphone</span
-                >
-                oder <span class="attention">Computer</span>?
+                Sie verbringen zuviel Zeit am <a class="show-link" href="/hypnose-klagenfurt/digital-detox" ><span class="attention">Smartphone</span></a>
+                oder <a class="show-link" href="/hypnose-klagenfurt/digital-detox" ><span class="attention">Computer</span></a>?
             </p>
             <p class="catchphrase">
-                Sie können sich nicht <span class="attention"
-                    >nicht entspannen</span
-                >
+                Sie können sich nicht <a class="show-link" href="/hypnose-klagenfurt/tiefenentspannung" ><span class="attention">nicht entspannen</span></a>
                 oder haben
-                <span class="attention">Schlafprobleme</span>?
+                <a class="show-link" href="/hypnose-klagenfurt/tiefenentspannung" ><span class="attention">Schlafprobleme</span></a>?
             </p>
         </div>
-        <a class="cta" type="button" style=""href="/leistungen"
-            >HIER ERFAHREN SIE MEHR</a
+        <a 
+            class="cta" 
+            title="Navigieren Sie zu den Hypnose Leistungen" 
+            type="button" 
+            style=""
+            aria-label="auto"
+            aria-live="polite"
+            href="/hypnose-klagenfurt"
         >
-    </div>
-</header>
+            Hypnose kann Ihnen helfen
+        </a> 
+    <!-- </div> -->
+</article>
 
 <style lang="scss">
-    :global(.alert-svg) {
+    :global(.information-box) {
         position: absolute;
         top: -40px;
         box-sizing: border-box;
@@ -56,10 +60,19 @@
         stroke: #fff !important;
         stroke-width: 0px;
     }
+    
     .cta{
-        color: #fff !important;
+        text-transform: uppercase;
+        // font-size: 16px;
+        // letter-spacing: 1px;
+        word-spacing: .3rem;
+        color:#fff;
+        color:var(--text);
+        font-weight: 400;
         &:hover{
-            color: var(--attention) !important;
+            color: var(--text);
+        color:#fff;
+
         }
     }
     .Information {
@@ -73,67 +86,28 @@
         height: auto;
         width: auto;
         background-color: #ffffff;
-        padding: 5px;
+        padding: .5rem .7rem;
         box-shadow: 0px 6px 15px -5px rgba(0, 0, 0, 0.25);
-        .wrapper {
+        display: flex;
+        border-radius: 0px;
+        margin: 0px 10px;
+        .catchphrases {
+            position: relative;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            box-sizing: border-box;
-            margin: 10px;
-
-            .catchphrases {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                font-family: var(--font-family, "Segoe UI");
-                // background-color: #ffffff;
-                padding:30px;
-                // height: 150px;
-                gap: 1.2rem;
-                span {
-                    font-family: 'Open Sans', sans-serif;
-                    font-weight: 700;
-                    color: #378d93;
-                   
-                }
-                .catchphrase {
-                    font-weight: 300;
-                    font-family: var(--font-family, "Segoe UI");
-                    color: var(--text);
-                    font-size: 1rem;
-                    font-size: 18px;
-                    // text-align: justify;
-                    // letter-spacing: .06rem;
-                }
-               
+            align-items: flex-start;
+            padding:30px;
+            gap: 1.2rem;
+            .catchphrase {
+                font-weight: 300;
+                color: var(--text);
+                font-size: 1rem;
+                font-size: 18px;
             }
         }
     }
     @media screen and (max-width: 480px) {
-        // span{
-        //     font-family: 'Segoe UI';
-        //     font-style: normal;
-        //     font-weight: 300;
-        //     font-size: 38px;
-        //     line-height: 38px;
-        //     // letter-spacing: .15rem;
-        //     letter-spacing: 2.7px;
-        //     // letter-spacing: 4px;
-        // }
-        // .heading{
-        //     padding:10px;
-        // }
-        // .wrapper{
-        //     .subheading{
-        //         line-height: 30px;
-        //         font-size: 15px;
-        //         letter-spacing: 3px;
-        //         width:100%;
-        //     }
-        // }
+        
     }
 </style>

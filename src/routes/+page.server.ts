@@ -2,6 +2,7 @@ import { createClient } from '$lib/prismicio'
 import { error, type Actions } from '@sveltejs/kit';
 import type { PageServerLoad } from "./$types";
 
+export const prerender = false;
 export const load: PageServerLoad = async (data) => {
     const { fetch, request, route, cookies } = data;
     const popup = cookies.get("aktion-popup");
@@ -12,7 +13,7 @@ export const load: PageServerLoad = async (data) => {
 
     if (document) {
         return { document, popup }
-    }
+    } 
 
     error(404, 'Not found')
 };

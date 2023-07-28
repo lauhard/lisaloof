@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer';
 import { HOSTINGER_MAIL } from "$env/static/private";
 import { contactSchema } from "$lib/zod/schemas/contactSchema";
 
+export const prerender = false;
 export const load: PageServerLoad = async (event) => {
     return {}
 }

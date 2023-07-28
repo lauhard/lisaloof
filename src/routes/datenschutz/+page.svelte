@@ -556,10 +556,10 @@ Zu welchem Zweck und in welchem Umfang Daten von dem Anbieter erhoben werden, k�
                     Mutterunternehmen: Microsoft Corporation, One Microsoft Way, Redmond, WA 98052-6399, USA
                 </li>
                 <li>
-                    <a href=" https://www.skype.com/de/">Skype</a>
+                    <a href="https://www.skype.com/de/">Skype</a>
                 </li>
                 <li>
-                    <a href=" https://privacy.microsoft.com/de-de/privacystatement">Datenschutzerklärung</a>
+                    <a href="https://privacy.microsoft.com/de-de/privacystatement">Datenschutzerklärung</a>
                 </li>
             </ul>
             <h3>
@@ -620,7 +620,7 @@ Zu welchem Zweck und in welchem Umfang Daten von dem Anbieter erhoben werden, k�
                     <a href="https://www.google.de/maps">Maps</a>
                 </li>
                 <li>
-                    <a href=" https://policies.google.com/privacy">Datenschutzerklärung</a>
+                    <a href="https://policies.google.com/privacy">Datenschutzerklärung</a>
                 </li>
                 <li>
                     <a href="https://tools.google.com/dlpage/gaoptout?hl=de">Opt-Out</a>

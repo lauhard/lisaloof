@@ -20,11 +20,10 @@
 
 
 {#if !hide}
-    <button on:click={(e)=>dispatch("action",e)}
+    <button on:mousedown={(e)=>dispatch("action",e)}
         type="button"
         title="{title}"
         aria-label="auto"
-        aria-live="polite"
         class="base {classNames}"
     >
         <slot></slot>
