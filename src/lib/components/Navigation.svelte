@@ -18,7 +18,7 @@
 <!-- content here -->
 <nav class="navigation">
     <BurgerMenu bind:open className="burger" />
-    <ul class="menu-entries" class:mobile={innerWidth <= 680 && open == true}>
+    <ul class="menu-entries" class:mobile={innerWidth <= 680 && open === true}>
         <li class:active={$page.url.pathname === "/"}>
             <a href="/">Startseite</a>
         </li>
@@ -136,7 +136,6 @@
             width: 100%;
             display: flex;
             justify-content: end;
-            height: 100% !important;
             li {
                 position: relative;
                 word-break: keep-all;
@@ -228,20 +227,7 @@
             margin-top: 10px !important;
         }
 
-
-
-        nav {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            overflow-y: scroll;
-            :global(.burger) {
-                display: flex !important;
-                margin-right: 20px !important;
-            }
-            li[data-submenu="leistung"] {
+        li[data-submenu="leistung"] {
             min-height: 60px !important;
             position: relative !important;
             align-items: center !important;
@@ -318,11 +304,23 @@
             }
             // transition: all 30ms ease-in-out;
         }
+
+        nav {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            overflow-y: scroll;
+            :global(.burger) {
+                display: flex !important;
+                margin-right: 20px !important;
+            }
             .menu-entries {
                 display: none;
                 width: 100%;
                 font-size: 12px;
-                height: 0px !important;
+                height: auto !important;
                 // transition: all 30ms ease-in-out;
             }
 
@@ -334,15 +332,9 @@
                 top: 85px !important;
                 display: flex !important;
                 flex-direction: column;
-                height: auto !important;
                 background-color: #fff;
                 // transition: all 1s ease-out;
-                // min-height: 250px !important;
-                // height: 100% !important;
-                li{
-                    min-height: 60px;
-                    height: 60px;
-                }
+                min-height: 250px !important;
                 left: 0px;
                 z-index: 99999;
                 li:not([data-submenu="leistung"]) {
