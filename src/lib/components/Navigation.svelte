@@ -51,7 +51,7 @@
             <a href="/hypnose-klagenfurt">Leistungen</a>
             {#if innerWidth <= 680}
                 <div
-                    class="simple submenu-open"
+                    class=" toggle-submenu"
                     role="button"
                     tabindex="0"
                     on:mousedown={(e) => {
@@ -73,7 +73,6 @@
                 <Submenu
                     showSubmenu={toggleSubmenuOnMobile}
                     classNames="submenu-mobile"
-                    --mobile-position="relative"
                 />
             {/if}
         </li>
@@ -110,7 +109,182 @@
     />
 {/if}
 
+
 <style lang="scss">
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        font-family: var(--font-family, "Segoe UI");
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        :global(.burger) {
+            border-width: 1px !important;
+            display: none !important;
+        }
+        .menu-entries {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            li {
+                position: relative;
+                word-break: keep-all;
+                text-transform: uppercase;
+                a {
+                    outline: none;
+                    list-style: none;
+                    color: var(--text, #fff);
+                    background-color: none;
+                    font-size: 12px;
+                }
+                a::before {
+                    content: " ";
+                    width: 0px;
+                    border: 2px solid transparent;
+                    position: absolute;
+                    bottom: 0.9rem;
+                    border-radius: 5px;
+                    transition: all 0.2s ease-in-out;
+                }
+                &:hover {
+                    &:not([data-submenu="leistung"], [data-submenu="special"]){
+                        a::before {
+                            content: " ";
+                            width: 45px;
+                            border: 2px solid var(--primary);
+                            position: absolute;
+                            border-radius: 5px;
+                            bottom: 0.9rem;
+                            transition: all 0.2s ease-in-out;
+                        }
+                        transition: all 0.2s ease-in-out;
+                    }
+                }
+            }
+            .active {
+                a::before {
+                    content: " ";
+                    width: 45px;
+                    border: 2px solid var(--primary);
+                    position: absolute;
+                    border-radius: 5px;
+                    bottom: 0.9rem;
+                }
+            }
+            .leistung {
+                a::before {
+                    content: "▼";
+                    font-size: 0.8rem;
+                    color: var(--primary);
+                    position: absolute;
+                    bottom: 4px;
+                    left: calc(50% - 10px);
+                    // transition: all 0.2s ease-in-out;
+                }
+            }
+            transition: all 1s ease-out;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        nav {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            margin-top: 5px;
+            :global(.burger) {
+                display: flex !important;
+                margin-right: 20px !important;
+            }
+            .menu-entries {
+                display: none;
+                width: 100%;
+                font-size: 12px;
+            }
+            .mobile {
+                justify-content: end;
+                align-items: center;
+                width: 100% !important;
+                position: absolute;
+                top: 80px;
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                transition: all 1s ease-out;
+                // height: 250px;
+                li {
+                    display: flex;
+                    width: 100%;
+                    // background-color: #fff;
+                    height: 60px;
+                    margin: 0;
+                    padding: 0px;
+                    border-bottom: 1px solid rgba(194, 193, 193, 0.74);
+                    justify-content: center;
+                    align-items: center;
+                    a {
+                        display: block;
+                        text-align: center;
+                        align-self: center;
+                        padding: 20px;
+                        height: 100%;
+                        width: 100%;
+                    }
+                    a::before {
+                        bottom: 0.5rem;
+                    }
+                    &:hover {
+                        a::before {
+                            content: " ";
+                            bottom: 0.5rem;
+                            transition: all 0.2s ease-in-out;
+                        }
+                        transition: all 0.2s ease-in-out;
+                    }
+                }
+                li[data-submenu="leistung"] {
+                    height: auto !important;
+                    display: flex !important;
+                    justify-content: center !important;
+                    flex-direction: column !important;
+                    min-height: 60px !important;
+                    
+                    :global(.submenu-mobile){
+                        position: relative !important;
+                        min-height: 0px  !important;
+                    }
+                    .toggle-submenu{
+                        display: inline-flex !important;
+                        position: absolute;
+                        width: 50px !important;
+                        height: 30px !important;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0px !important;
+                        margin-bottom: 10px !important;
+                        top:2rem;
+                        right:20%;
+                    }
+                }
+                .active {
+                    a::before {
+                        content: " ";
+                        bottom: 0.5rem;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+
+
+<!-- <style lang="scss">
     ul {
         margin: 0;
         padding: 0;
@@ -383,4 +557,4 @@
             }
         }
     }
-</style>
+</style> -->

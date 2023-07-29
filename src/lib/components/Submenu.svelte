@@ -150,7 +150,7 @@
         .subnav {
             top:unset !important;
             bottom:unset !important;
-            min-height: 100px;
+            // min-height: 100px;
             max-height: 70vh;
             width: 100% ;
         }
