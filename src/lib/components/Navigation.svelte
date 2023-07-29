@@ -5,7 +5,7 @@
     import Submenu from "./Submenu.svelte";
 
     $: focus = false;
-$:console.log("focus", focus);
+    $: console.log("focus", focus);
     $: toggleSubmenuOnMobile = false;
     $: innerWidth = 0;
 
@@ -19,6 +19,7 @@ $:console.log("focus", focus);
 <nav class="navigation">
     <BurgerMenu bind:open className="burger" />
     <ul class="menu-entries" class:mobile={innerWidth < 680 && open == true}>
+        {open}
         <li class:active={$page.url.pathname === "/"}>
             <a href="/">Startseite</a>
         </li>
@@ -50,7 +51,7 @@ $:console.log("focus", focus);
             <!-- <div> -->
             <a href="/hypnose-klagenfurt">Leistungen</a>
             {#if innerWidth <= 680}
-                <div 
+                <div
                     class="simple submenu-open"
                     role="button"
                     tabindex="0"
@@ -129,7 +130,7 @@ $:console.log("focus", focus);
         }
         .submenu-open {
             display: none;
-            scale:0;
+            scale: 0;
         }
         .menu-entries {
             font-size: 12px;
@@ -182,7 +183,7 @@ $:console.log("focus", focus);
                     position: absolute;
                     bottom: 0.9rem;
                     border-radius: 5px;
-                // }
+                    // }
                 }
             }
             .leistung {
@@ -196,10 +197,10 @@ $:console.log("focus", focus);
                     // transition: all 0.2s ease-in-out;
                 }
             }
-            
+
             .special {
                 color: #fff !important;
-                border:none !important;
+                border: none !important;
                 &:hover {
                     background-color: var(--secondary) !important;
                     color: #fff;
@@ -256,8 +257,8 @@ $:console.log("focus", focus);
                 min-width: 0 !important;
                 min-height: 0 !important;
                 text-align: center !important;
-                scale:1;
-                &:hover{
+                scale: 1;
+                &:hover {
                     background-color: #fff;
                 }
             }
@@ -292,7 +293,6 @@ $:console.log("focus", focus);
             }
         }
         .leistung {
-            
             a::before {
                 content: " ";
                 width: 45px !important;
@@ -304,7 +304,6 @@ $:console.log("focus", focus);
                 // transition: all 0.2s ease-in-out !important;
             }
             // transition: all 30ms ease-in-out;
-
         }
 
         nav {
@@ -324,7 +323,6 @@ $:console.log("focus", focus);
                 font-size: 12px;
                 // height: auto;
                 // transition: all 30ms ease-in-out;
-
             }
 
             .mobile {
@@ -370,8 +368,7 @@ $:console.log("focus", focus);
                         }
                         // transition: all 0.2s ease-in-out;
                     }
-                // transition: all 30ms ease-in-out;
-
+                    // transition: all 30ms ease-in-out;
                 }
             }
             .special-active {
@@ -381,9 +378,9 @@ $:console.log("focus", focus);
             }
             .special {
                 height: 100%;
-                    background-color: var(--primary) !important;
-                    border-radius: 0px !important;
-                }
+                background-color: var(--primary) !important;
+                border-radius: 0px !important;
+            }
         }
     }
 </style>

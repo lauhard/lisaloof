@@ -3,7 +3,7 @@
     export let className = "";
 </script>
 
-<div class="bar-wrapper {className}" aria-label="toggle-burger-menu" role="button" tabindex="0" aria-live="polite" on:mousedown={()=>{open=!open;}} class:open={open === true}>
+<div class="bar-wrapper {className}" aria-label="toggle-burger-menu" role="button" tabindex="0" aria-live="polite" on:mousedown={(e)=>open=!open} class:open="{open === true}">
     <li class="bar first"></li>
     <li class="bar second"></li>
     <li class="bar third"></li>
