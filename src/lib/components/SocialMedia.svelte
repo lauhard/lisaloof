@@ -88,9 +88,7 @@
     }
     .hide-social-buttons {
         // opacity: 0;
-        .social-button{
-            display: none !important;
-        }
+        .social-button{}
         left:-55px;
         background-color: var(--attention);
         transition: all .5s ease-in-out;

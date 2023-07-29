@@ -47,7 +47,7 @@
     in:fade={{ duration: 250, delay: 10 }}
     out:fade={{ delay: 10, duration: 250 }}
     >
-    <SocialMedia {hide}></SocialMedia>
+    <!-- <SocialMedia {hide}></SocialMedia> -->
 
     <div
         class="content-wrapper"
@@ -114,12 +114,13 @@
         z-index: 999;
         padding-left: 5px;
     }
-    .hide {
-        opacity: 0;
-        height: 0;
-        transition: all 0.2s ease-in-out;
-        display: none !important;
-    }
+    // .hide {
+    //     opacity: 0;
+    //     height: 0;
+    //     transition: all 0.2s ease-in-out;
+    //     // display: none !important;
+    //     // display: none;
+    // }
     .scroll {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
             rgba(0, 0, 0, 0.093) 0px 3px 7px -3px;
