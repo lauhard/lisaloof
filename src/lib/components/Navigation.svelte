@@ -17,6 +17,7 @@
 <svelte:window bind:innerWidth />
 <!-- content here -->
 <nav class="navigation">
+    {open}
     <BurgerMenu bind:open className="burger" />
     <ul class="menu-entries" class:mobile={innerWidth <= 680 && open == true}>
         {open}
