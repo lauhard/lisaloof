@@ -1,6 +1,6 @@
 export async function GET() {
-    return new Response(
-        `
+  return new Response(
+    `
         <?xml version="1.0" encoding="UTF-8" ?>
         <urlset
             xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
@@ -11,45 +11,75 @@ export async function GET() {
             xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
         >
         <url>
-          <loc>https://lisaloof.com/</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>1.00</priority>
-        </url>
-        <url>
-          <loc>https://lisaloof.com/ueber-mich</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>0.80</priority>
-        </url>
-        <url>
-          <loc>https://lisaloof.com/leistungen</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>0.80</priority>
-        </url>
-        <url>
-          <loc>https://lisaloof.com/onlinehypnose</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>0.80</priority>
-        </url>
-        <url>
-          <loc>https://lisaloof.com/kontakt</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>0.80</priority>
-        </url>
-        <url>
-          <loc>https://lisaloof.com/impressum</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>0.80</priority>
-        </url>
-        <url>
-          <loc>https://lisaloof.com/datenschutz</loc>
-          <lastmod>2023-07-11T20:12:08+00:00</lastmod>
-          <priority>0.80</priority>
-        </url>
+        <loc>https://lisaloof.com/</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/ueber-mich</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt/raucherentwoehnung</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt/digital-detox</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt/entspannt-in-die-pruefung</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt/tiefenentspannung</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt/selbstwert-steigern</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/hypnose-klagenfurt/online-hypnose</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/kontakt</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/onlinehypnose</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/impressum</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lisaloof.com/datenschutz</loc>
+        <lastmod>2023-07-29T07:00:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
         </urlset>`.trim(),
-        {
-            headers: {
-                'Content-Type': 'application/xml'
-            }
-        }
-    );
+    {
+      headers: {
+        'Content-Type': 'application/xml'
+      }
+    }
+  );
 }
