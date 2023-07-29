@@ -47,7 +47,7 @@
     in:fade={{ duration: 250, delay: 10 }}
     out:fade={{ delay: 10, duration: 250 }}
     >
-    <!-- <SocialMedia {hide}></SocialMedia> -->
+    <SocialMedia {hide}></SocialMedia>
 
     <div
         class="content-wrapper"
@@ -94,13 +94,13 @@
     //     list-style-type: none !important;
     //     list-style: none !important;
     // }
-    :global(._toastBar) {
-        background: var(
-            --toastBarBackground,
-            rgba(243, 149, 33, 0.75)
-        ) !important;
-        list-style: none !important;
-    }
+    // :global(._toastBar) {
+    //     background: var(
+    //         --toastBarBackground,
+    //         rgba(243, 149, 33, 0.75)
+    //     ) !important;
+    //     list-style: none !important;
+    // }
     // :global(._toastMsg) {
     //     ul,
     //     li {
@@ -114,19 +114,21 @@
         z-index: 999;
         padding-left: 5px;
     }
-    // .hide {
-    //     opacity: 0;
-    //     height: 0;
-    //     transition: all 0.2s ease-in-out;
-    //     // display: none !important;
-    //     // display: none;
-    // }
+    .hide {
+        opacity: 0;
+        height: 0px !important;
+        // transition: opacity 50ms ease-in-out;
+
+        scale: 0;
+
+        // display: none !important;
+        // display: none;
+    }
     .scroll {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
             rgba(0, 0, 0, 0.093) 0px 3px 7px -3px;
         opacity: 1;
-        transition: all 0.5s ease-in-out;
-        transition: all 0.2s ease-in-out;
+        // transition: all 0.5s ease-in-out;
         background-color: #fff !important;
         // height: 87px !important;
         z-index: 10;
@@ -139,13 +141,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #fff;
+        background-color: red;
         // background-color: #802323;
         z-index: 999 !important;
         position: fixed;
         width: 100%;
         top: 0;
-        transition: all 0.5s ease-in-out;
+        // transition: height 50ms ease-in-out;
         header {
             position: absolute;
             display: flex;
@@ -162,7 +164,10 @@
             flex-direction: row;
             justify-content: space-between;
             opacity: 1;
-            transition: all 0.5s ease-in-out;
+            // transition: opacity 50ms ease-in-out !important;
+            // transition: height 0.5s ease-in-out;
+            // scale:1;
+
         }
     }
     .app {

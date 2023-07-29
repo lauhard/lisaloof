@@ -5,7 +5,7 @@
     import Submenu from "./Submenu.svelte";
 
     $: focus = false;
-
+$:console.log("focus", focus);
     $: toggleSubmenuOnMobile = false;
     $: innerWidth = 0;
 
@@ -49,20 +49,19 @@
         >
             <!-- <div> -->
             <a href="/hypnose-klagenfurt">Leistungen</a>
-            <!-- {#if innerWidth <= 680} -->
+            {#if innerWidth <= 680}
                 <div 
                     class="simple submenu-open"
                     role="button"
                     tabindex="0"
                     on:mousedown={(e) => {
-                        // toggleSubmenuOnMobile = focus && toggleSubmenuOnMobile ? false : true;
                         toggleSubmenuOnMobile = !toggleSubmenuOnMobile;
                         focus = toggleSubmenuOnMobile;
                     }}
                 >
                     ▼
                 </div>
-            <!-- {/if} -->
+            {/if}
             <!-- </div> -->
             <!-- NOTE
                 --mobile-position
@@ -70,9 +69,9 @@
                 relative - sets the submenu to the position of the parent element
                 absolute - sets the submenu to the position of the first parent element with position: relative
             -->
-            {#if innerWidth < 680}
+            {#if innerWidth <= 680}
                 <Submenu
-                    showSubmenu={focus}
+                    showSubmenu={toggleSubmenuOnMobile}
                     classNames="submenu-mobile"
                     --mobile-position="relative"
                 />
@@ -130,6 +129,7 @@
         }
         .submenu-open {
             display: none;
+            scale:0;
         }
         .menu-entries {
             font-size: 12px;
@@ -154,7 +154,7 @@
                     position: absolute;
                     bottom: 0.9rem;
                     border-radius: 5px;
-                    transition: all 0.2s ease-in-out;
+                    // transition: all 0.2s ease-in-out;
                 }
                 &:hover {
                     &:not([data-submenu="leistung"], [data-submenu="special"]) {
@@ -165,10 +165,11 @@
                             position: absolute;
                             border-radius: 5px;
                             bottom: 0.9rem;
-                            transition: all 0.2s ease-in-out;
+                            // transition: all 0.2s ease-in-out;
                         }
-                        transition: all 0.2s ease-in-out;
+                        // transition: all 0.2s ease-in-out;
                     }
+                    // transition: all 0.2s ease-in-out;
                 }
             }
             .active {
@@ -192,7 +193,7 @@
                     position: absolute;
                     bottom: 4px;
                     left: calc(50% - 10px);
-                    transition: all 0.2s ease-in-out;
+                    // transition: all 0.2s ease-in-out;
                 }
             }
             
@@ -217,7 +218,7 @@
                     background-color: var(--secondary) !important;
                 }
             }
-            transition: all 1s ease-out;
+            // transition: all 1s ease-out;
         }
     }
 
@@ -238,6 +239,8 @@
             border-bottom: 1px solid rgba(227, 227, 227, 0.74);
             padding: 15px !important;
             height: 100% !important;
+            // transition: all 30ms ease-in-out;
+
             .submenu-open {
                 display: inline-flex !important;
                 position: absolute;
@@ -253,6 +256,7 @@
                 min-width: 0 !important;
                 min-height: 0 !important;
                 text-align: center !important;
+                scale:1;
                 &:hover{
                     background-color: #fff;
                 }
@@ -272,7 +276,7 @@
                 position: absolute;
                 bottom: 0.8rem !important;
                 border-radius: 5px;
-                transition: all 0.2s ease-in-out;
+                // transition: all 0.2s ease-in-out;
             }
             &:hover {
                 a::before {
@@ -282,9 +286,9 @@
                     position: absolute;
                     border-radius: 5px;
                     bottom: 0.8rem !important;
-                    transition: all 0.2s ease-in-out;
+                    // transition: all 0.2s ease-in-out;
                 }
-                transition: all 0.2s ease-in-out;
+                // transition: all 0.2s ease-in-out;
             }
         }
         .leistung {
@@ -297,8 +301,10 @@
                 border-radius: 5px !important;
                 bottom: 0.9rem !important;
                 left: unset !important;
-                transition: all 0.2s ease-in-out !important;
+                // transition: all 0.2s ease-in-out !important;
             }
+            // transition: all 30ms ease-in-out;
+
         }
 
         nav {
@@ -317,6 +323,8 @@
                 width: 100%;
                 font-size: 12px;
                 height: auto;
+                // transition: all 30ms ease-in-out;
+
             }
 
             .mobile {
@@ -324,13 +332,13 @@
                 align-items: center;
                 width: 100% !important;
                 position: absolute;
-                top: 85px;
+                top: 85px !important;
                 display: flex;
                 flex-direction: column;
                 background-color: #fff;
-                transition: all 1s ease-out;
+                // transition: all 1s ease-out;
                 min-height: 250px;
-                height: auto;
+                height: auto !important;
                 left: 0px;
                 li:not([data-submenu="leistung"]) {
                     display: flex;
@@ -357,10 +365,12 @@
                         a::before {
                             content: " ";
                             bottom: 0.7rem;
-                            transition: all 0.2s ease-in-out;
+                            // transition: all 0.2s ease-in-out;
                         }
-                        transition: all 0.2s ease-in-out;
+                        // transition: all 0.2s ease-in-out;
                     }
+                // transition: all 30ms ease-in-out;
+
                 }
             }
             .special-active {

@@ -63,7 +63,6 @@
             :global(.base){
                 --fill:var(--secondary-hover);
                 transition: all .3s ease-in-out;
-            
             }
         }
     }
@@ -76,7 +75,7 @@
         flex-direction: column;
         position: fixed;
         height: auto !important;
-        z-index: 999999999;
+        z-index: 999;
         background-color: white;
         left:0px;
         align-items: center;
@@ -84,11 +83,12 @@
         border-radius: 0 10px 10px 0;
         transition: all .5s ease-in-out;
         box-shadow: 0px 6px 15px -5px rgba(0, 0, 0, 0.25);
-
     }
     .hide-social-buttons {
         // opacity: 0;
-        .social-button{}
+        .social-button{
+            scale:0;
+        }
         left:-55px;
         background-color: var(--attention);
         transition: all .5s ease-in-out;

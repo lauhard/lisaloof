@@ -90,7 +90,8 @@
         font-family: var(--font-family, "Segoe UI");
         max-width: var(--content-width, 100%);
         width: 100%;
-        height: 70px;
+        // height: 70px;
+        height: 0px;
         background-color: var(--primary, #fff);
         display: flex;
         position: absolute;
@@ -100,6 +101,8 @@
         justify-content: end;
         overflow-x: scroll;
         overflow-y: hidden;
+        scale:0;
+        box-shadow: none;
         .submenu-list-items {
             display: none;
             align-items: center;
@@ -127,13 +130,10 @@
                 word-break: keep-all;
                 white-space: nowrap;
             }
-            transition: height 0.3s ease-in-out;
         }
-        box-shadow: none;
-        transition: all 0.3s ease-in-out;
     }
     .showSubmenu {
-      
+        scale: 1;
         top: var(--top,0);
         background-color: var(--d, #fff);
         border-left: 1px solid var(--attention, #fff);
@@ -141,9 +141,8 @@
         border-bottom: 1px solid var(--attention, #fff);
         .submenu-list-items {
             display: flex;
-            transition: all 0.3s ease-in-out;
         }
-        transition: all 0.3s ease-in-out;
+        height: 70px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
             rgba(0, 0, 0, 0.093) 0px 3px 7px -3px;
     }
@@ -174,7 +173,6 @@
             max-height: 60vh;
             top: unset;
             left: unset;
-            transition: all 1s ease-out;
             li{
                 margin: 0 !important;
                 padding: 0 !important;
