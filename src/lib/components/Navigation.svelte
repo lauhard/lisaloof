@@ -19,13 +19,21 @@
 <nav class="navigation">
     <BurgerMenu bind:open className="burger" />
     <ul class="menu-entries" class:mobile={innerWidth <= 680 && open === true}>
-        <li class:active={$page.url.pathname === "/"}>
+        <li 
+            aria-label="menuitem" 
+            role="menuitem"
+            class:active={$page.url.pathname === "/"}>
             <a href="/">Startseite</a>
         </li>
-        <li class:active={$page.url.pathname === "/ueber-mich"}>
+        <li 
+            aria-label="menuitem" 
+            role="menuitem" 
+            class:active={$page.url.pathname === "/ueber-mich"}>
             <a href="/ueber-mich">Über Mich</a>
         </li>
         <li
+            aria-label="menuitem" 
+            role="menuitem"
             data-submenu="leistung"
             on:mouseover={(e) => {
                 focus = innerWidth > 680 ? true : focus; // show on hover only on desktop nav
@@ -78,6 +86,8 @@
         </li>
 
         <li
+            aria-label="menuitem" 
+            role="menuitem"
             data-submenu="special"
             class:special-active={$page.url.pathname ===
                 "/hypnose-klagenfurt/online-hypnose"}
@@ -88,8 +98,11 @@
                 href="/hypnose-klagenfurt/online-hypnose">Onlinehypnose</a
             >
         </li>
-        <li class:active={$page.url.pathname === "/kontakt"}>
-            <a href="/kontakt">Kontakt</a>
+        <li 
+            aria-label="menuitem" 
+            role="menuitem"
+            class:active={$page.url.pathname === "/kontakt"}>
+                <a href="/kontakt">Kontakt</a>
         </li>
     </ul>
 </nav>
@@ -124,6 +137,9 @@
         :global(.burger) {
             border-width: 1px !important;
             display: none !important;
+        }
+        .toggle-submenu{
+            display: none;
         }
         .menu-entries {
             width: 100%;
@@ -185,17 +201,43 @@
                     // transition: all 0.2s ease-in-out;
                 }
             }
+            .special {
+                color: #fff !important;
+                border:none !important;
+                
+                &:hover {
+                    background-color: var(--secondary) !important;
+                    color: #fff;
+                    a::before {
+                        content: unset !important;
+                        width: 0px;
+                    }
+                }
+                a::before {
+                    content: unset !important;
+                    width: 0px;
+                }
+            }
+            .special-active {
+                .special {
+                    background-color: var(--secondary) !important;
+                }
+            }
             transition: all 1s ease-out;
         }
     }
 
     @media screen and (max-width: 680px) {
+        :global(.submenu-mobile.showSubmenu) {
+            // margin-top: 20px !important;
+        }
         nav {
             display: flex;
             justify-content: end;
             align-items: center;
             width: 100%;
             margin-top: 5px;
+
             :global(.burger) {
                 display: flex !important;
                 margin-right: 20px !important;
@@ -215,11 +257,11 @@
                 flex-direction: column;
                 background-color: #fff;
                 transition: all 1s ease-out;
-                // height: 250px;
+                box-shadow: 0px 6px 15px -5px rgba(0, 0, 0, 0.25);
                 li {
                     display: flex;
                     width: 100%;
-                    // background-color: #fff;
+                    background-color: #fff;
                     height: 60px;
                     margin: 0;
                     padding: 0px;
@@ -235,12 +277,12 @@
                         width: 100%;
                     }
                     a::before {
-                        bottom: 0.5rem;
+                        // bottom: 0.5rem;
                     }
                     &:hover {
                         a::before {
                             content: " ";
-                            bottom: 0.5rem;
+                            // bottom: 0.5rem;
                             transition: all 0.2s ease-in-out;
                         }
                         transition: all 0.2s ease-in-out;
@@ -250,12 +292,24 @@
                     height: auto !important;
                     display: flex !important;
                     justify-content: center !important;
+                    align-items: center !important;
                     flex-direction: column !important;
-                    min-height: 60px !important;
-                    
+                    // min-height: 60px !important;
+                    a{
+                        text-align: center;
+                        justify-self: center;
+                        align-self: center;
+                        min-height: 50px !important;
+                        padding:0px !important;
+                        padding-top:5px !important;
+                        // margin:0px !important;
+                    }
                     :global(.submenu-mobile){
+                        // margin-top: 10px;
+                        position: absolute;
                         position: relative !important;
                         min-height: 0px  !important;
+                        
                     }
                     .toggle-submenu{
                         display: inline-flex !important;
@@ -266,16 +320,19 @@
                         align-items: center;
                         padding: 0px !important;
                         margin-bottom: 10px !important;
-                        top:2rem;
-                        right:20%;
+                        top:1rem;
+                        right:10%;
                     }
                 }
                 .active {
                     a::before {
                         content: " ";
-                        bottom: 0.5rem;
+                        // bottom: 0.5rem;
                         border-radius: 5px;
                     }
+                }
+                .special{
+                    border-radius: 0px !important;
                 }
             }
         }
