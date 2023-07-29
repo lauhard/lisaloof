@@ -141,8 +141,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: red;
+        // background-color: red;
         // background-color: #802323;
+        background-color: #fff;
         z-index: 999 !important;
         position: fixed;
         width: 100%;
