@@ -110,7 +110,7 @@
     />
 {/if}
 
-<!-- <style lang="scss">
+<style lang="scss">
     ul {
         margin: 0;
         padding: 0;
@@ -316,7 +316,13 @@
                 display: flex !important;
                 margin-right: 20px !important;
             }
-            
+            .menu-entries {
+                    display: none !important;
+                    width: 100%;
+                    font-size: 12px;
+                    height: auto !important;
+                    transition: all 30ms ease-in-out;
+                }
 
             .mobile {
                 justify-content: end;
@@ -363,13 +369,7 @@
                     }
                     // transition: all 30ms ease-in-out;
                 }
-                .menu-entries {
-                    display: none;
-                    width: 100%;
-                    font-size: 12px;
-                    height: auto !important;
-                    transition: all 30ms ease-in-out;
-                }
+                
             }
             .special-active {
                 .special {
@@ -380,141 +380,6 @@
                 height: 100%;
                 background-color: var(--primary) !important;
                 border-radius: 0px !important;
-            }
-        }
-    }
-</style> -->
-<style lang="scss">
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    nav {
-        font-family: var(--font-family, "Segoe UI");
-        width: 100%;
-        height: 70px;
-        display: flex;
-        justify-content: center;
-        :global(.burger) {
-            border-width: 1px !important;
-            display: none !important;
-        }
-        .menu-entries {
-            font-size: 12px;
-            width: 100%;
-            display: flex;
-            justify-content: end;
-            li {
-                position: relative;
-                word-break: keep-all;
-                text-transform: uppercase;
-                a {
-                    outline: none;
-                    list-style: none;
-                    color: var(--text, #fff);
-                    background-color: none;
-                }
-                a::before {
-                    content: " ";
-                    width: 0px;
-                    border: 2px solid transparent;
-                    position: absolute;
-                    bottom: 0.8rem;
-                    border-radius: 5px;
-                    transition: all 0.2s ease-in-out;
-                }
-                &:hover {
-                    a::before {
-                        content: " ";
-                        width: 45px;
-                        border: 2px solid var(--primary);
-                        position: absolute;
-                        border-radius: 5px;
-                        bottom: 0.8rem;
-                        transition: all 0.2s ease-in-out;
-                    }
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-            .active {
-                a::before {
-                    content: " ";
-                    width: 45px;
-                    height: 0.15rem;
-                    background-color: var(--primary);
-                    position: absolute;
-                    bottom: 0.8rem;
-                    border-radius: 5px;
-                }
-            }
-            transition: all 1s ease-out;
-        }
-    }
-
-    @media screen and (max-width: 680px) {
-        nav {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            width: 100%;
-            margin-top: 5px;
-            :global(.burger) {
-                display: flex !important;
-                margin-right: 20px !important;
-            }
-            .menu-entries {
-                display: none;
-                width: 100%;
-                font-size: 12px;
-            }
-            .mobile {
-                justify-content: end;
-                align-items: center;
-                width: 100% !important;
-                position: absolute;
-                top: 80px;
-                display: flex;
-                flex-direction: column;
-                background-color: #fff;
-                transition: all 1s ease-out;
-                height: 250px;
-                li {
-                    display: flex;
-                    width: 100%;
-                    background-color: #fff;
-                    height: 60px;
-                    margin: 0;
-                    padding: 0px;
-                    border-bottom: 1px solid rgba(194, 193, 193, 0.74);
-                    justify-content: center;
-                    align-items: center;
-                    a {
-                        display: block;
-                        text-align: center;
-                        align-self: center;
-                        padding: 20px;
-                        height: 100%;
-                        width: 100%;
-                    }
-                    a::before {
-                        bottom: 0.5rem;
-                    }
-                    &:hover {
-                        a::before {
-                            content: " ";
-                            bottom: 0.5rem;
-                            transition: all 0.2s ease-in-out;
-                        }
-                        transition: all 0.2s ease-in-out;
-                    }
-                }
-                .active {
-                    a::before {
-                        content: " ";
-                        bottom: 0.5rem;
-                        border-radius: 5px;
-                    }
-                }
             }
         }
     }
