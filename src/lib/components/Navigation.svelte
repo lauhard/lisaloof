@@ -49,8 +49,8 @@
         >
             <!-- <div> -->
             <a href="/hypnose-klagenfurt">Leistungen</a>
-            <!-- {#if innerWidth <= 680} -->
-                <div 
+            {#if innerWidth <= 680}
+                <div
                     class="simple submenu-open"
                     role="button"
                     tabindex="0"
@@ -62,7 +62,7 @@
                 >
                     ▼
                 </div>
-            <!-- {/if} -->
+            {/if}
             <!-- </div> -->
             <!-- NOTE
                 --mobile-position
@@ -127,9 +127,6 @@
         :global(.burger) {
             border-width: 1px !important;
             display: none !important;
-        }
-        .submenu-open {
-            display: none;
         }
         .menu-entries {
             font-size: 12px;
