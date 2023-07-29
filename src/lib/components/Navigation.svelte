@@ -228,7 +228,20 @@
             margin-top: 10px !important;
         }
 
-        li[data-submenu="leistung"] {
+
+
+        nav {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            overflow-y: scroll;
+            :global(.burger) {
+                display: flex !important;
+                margin-right: 20px !important;
+            }
+            li[data-submenu="leistung"] {
             min-height: 60px !important;
             position: relative !important;
             align-items: center !important;
@@ -305,18 +318,6 @@
             }
             // transition: all 30ms ease-in-out;
         }
-
-        nav {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            overflow-y: scroll;
-            :global(.burger) {
-                display: flex !important;
-                margin-right: 20px !important;
-            }
             .menu-entries {
                 display: none;
                 width: 100%;
@@ -331,7 +332,7 @@
                 width: 100% !important;
                 position: absolute !important;
                 top: 85px !important;
-                display: flex;
+                display: flex !important;
                 flex-direction: column;
                 height: auto !important;
                 background-color: #fff;
