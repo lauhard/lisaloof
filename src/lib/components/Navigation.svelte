@@ -18,7 +18,7 @@
 <!-- content here -->
 <nav class="navigation">
     <BurgerMenu bind:open className="burger" />
-    <ul class="menu-entries" class:mobile={innerWidth < 680 && open == true}>
+    <ul class="menu-entries" class:mobile={innerWidth <= 680 && open == true}>
         {open}
         <li class:active={$page.url.pathname === "/"}>
             <a href="/">Startseite</a>
@@ -321,7 +321,7 @@
                 display: none;
                 width: 100%;
                 font-size: 12px;
-                // height: auto;
+                height: auto !important;
                 // transition: all 30ms ease-in-out;
             }
 
