@@ -17,10 +17,8 @@
 <svelte:window bind:innerWidth />
 <!-- content here -->
 <nav class="navigation">
-    {open}
     <BurgerMenu bind:open className="burger" />
     <ul class="menu-entries" class:mobile={innerWidth <= 680 && open == true}>
-        {open}
         <li class:active={$page.url.pathname === "/"}>
             <a href="/">Startseite</a>
         </li>
@@ -138,6 +136,7 @@
             width: 100%;
             display: flex;
             justify-content: end;
+            height: 100% !important;
             li {
                 position: relative;
                 word-break: keep-all;
@@ -322,7 +321,7 @@
                 display: none;
                 width: 100%;
                 font-size: 12px;
-                height: auto !important;
+                height: 0px !important;
                 // transition: all 30ms ease-in-out;
             }
 
@@ -330,13 +329,19 @@
                 justify-content: end;
                 align-items: center;
                 width: 100% !important;
-                position: absolute;
+                position: absolute !important;
                 top: 85px !important;
                 display: flex;
                 flex-direction: column;
+                height: auto !important;
                 background-color: #fff;
                 // transition: all 1s ease-out;
-                min-height: 250px !important;
+                // min-height: 250px !important;
+                // height: 100% !important;
+                li{
+                    min-height: 60px;
+                    height: 60px;
+                }
                 left: 0px;
                 z-index: 99999;
                 li:not([data-submenu="leistung"]) {
