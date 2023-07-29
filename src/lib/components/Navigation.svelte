@@ -322,7 +322,7 @@ $:console.log("focus", focus);
                 display: none;
                 width: 100%;
                 font-size: 12px;
-                height: auto;
+                // height: auto;
                 // transition: all 30ms ease-in-out;
 
             }
@@ -337,10 +337,11 @@ $:console.log("focus", focus);
                 flex-direction: column;
                 background-color: #fff;
                 // transition: all 1s ease-out;
-                min-height: 250px;
-                height: auto !important;
+                min-height: 250px !important;
                 left: 0px;
+                z-index: 99999;
                 li:not([data-submenu="leistung"]) {
+                    z-index: 99999;
                     display: flex;
                     width: 100%;
                     background-color: #fff;
