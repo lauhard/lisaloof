@@ -11,8 +11,8 @@
     </div>
     <div class="contact-info">
         <!-- <div class="contact-wrapper" > -->
-            <h3 class="headline-center">Praxis Adresse</h3>
-            <p class="text text-center mb1">Sie finden mich in der wunderschönen klagenfurter Altstadt</p>
+            <h3 class="headline-center">Praxisadresse</h3>
+            <p class="text text-center mb1">Sie finden mich in der wunderschönen Klagenfurter Altstadt</p>
             <div class="address ">
                 <p class="text ">Waagplatz 1, 9020 Klagenfurt</p>
                 <p class="text  text-center ">Österreich</p>
