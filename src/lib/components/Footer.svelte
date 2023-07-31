@@ -49,7 +49,7 @@
                         <a class="show-link" href="/hypnose-klagenfurt">Leistungen</a>
                     </li>
                     <li>
-                        <a class="show-link" href="/onlinehypnose">Online-Hypnose</a>
+                        <a class="show-link" href="/hypnose-klagenfurt/online-hypnose">Online-Hypnose</a>
                     </li>
                     <li>
                         <a class="show-link" href="/kontakt">Kontakt</a>
