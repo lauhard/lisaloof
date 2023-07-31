@@ -7,7 +7,7 @@ export const formAction = async ({form, data, action, cancel, submitter }: any, 
         const result = action.result as ActionResult<Record<string, any>, Record<string, any>>
         const isValid = result.type
 
-        console.log("isvalid", isValid)
+        // console.log("isvalid", isValid)
         if(isValid==="success" ) {
             if(result?.data?.success) {
                 form.reset();
