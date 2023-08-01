@@ -91,7 +91,7 @@
             </article>
         </div>
         <div class="cell service">
-            <h2 class="decorator-center">Kontakformular</h2>
+            <h2 class="decorator-center">Kontaktformular</h2>
             <p class="important-paragraph text-center mb2">
                 Schicken Sie eine unverbindliche Anfrage für Ihr
                     kostenloses Erstgespräch oder einen Termin.
