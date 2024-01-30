@@ -30,7 +30,7 @@
                        <a class="show-link" href="tel:+4367761750953">Tel: +43 (0) 67761750953</a>
                     </li>
                     <li>
-                        <a class="show-link" href="mailto:praxis@lisaloof.at">Mail: praxis@lisaloof.at</a>
+                        <a class="show-link" href="mailto:praxis@lisaloof.com">Mail: praxis@lisaloof.com</a>
                     </li>
                 </ul>
             </div>
